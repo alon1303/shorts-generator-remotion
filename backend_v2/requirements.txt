@@ -1,0 +1,30 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+ffmpeg-python==0.2.0
+pydantic>=2.12.0
+pydantic-settings>=2.12.0
+python-dotenv>=1.2.0
+faster-whisper==1.2.1
+ctranslate2>=4.0,<5
+onnxruntime>=1.14,<2
+av>=11
+filelock>=3.23.0
+
+# Reddit Stories Feature Dependencies
+aiofiles>=23.0.0
+html2image>=2.0.3
+pysubs2>=1.6.0
+edge-tts>=7.0.0
+
+# Title Card Refactoring Dependencies (Playwright + Jinja2)
+jinja2>=3.1.0
+playwright>=1.40.0
+pydub>=0.25.1
+elevenlabs>=1.0.0
+
+# Google API Dependencies for YouTube Upload
+google-api-python-client>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-auth-httplib2>=0.1.0
+google-auth>=2.0.0
