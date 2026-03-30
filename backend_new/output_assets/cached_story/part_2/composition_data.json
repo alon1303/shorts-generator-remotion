@@ -1,0 +1,70 @@
+{
+  "assets": {
+    "audio": "audio.mp3",
+    "title_card": "title_card.png",
+    "background": "background.mp4"
+  },
+  "metadata": {
+    "title": "This is a valid test title (Part 2)",
+    "subreddit": "RedditStories",
+    "fps": 30,
+    "duration_frames": 174
+  },
+  "words": [
+    {
+      "word": "This",
+      "startFrame": 0,
+      "endFrame": 12
+    },
+    {
+      "word": "is",
+      "startFrame": 15,
+      "endFrame": 27
+    },
+    {
+      "word": "a",
+      "startFrame": 30,
+      "endFrame": 42
+    },
+    {
+      "word": "valid",
+      "startFrame": 45,
+      "endFrame": 57
+    },
+    {
+      "word": "test",
+      "startFrame": 60,
+      "endFrame": 72
+    },
+    {
+      "word": "title",
+      "startFrame": 75,
+      "endFrame": 87
+    },
+    {
+      "word": "This",
+      "startFrame": 102,
+      "endFrame": 114
+    },
+    {
+      "word": "is",
+      "startFrame": 117,
+      "endFrame": 129
+    },
+    {
+      "word": "the",
+      "startFrame": 132,
+      "endFrame": 144
+    },
+    {
+      "word": "second",
+      "startFrame": 147,
+      "endFrame": 159
+    },
+    {
+      "word": "part",
+      "startFrame": 162,
+      "endFrame": 174
+    }
+  ]
+}

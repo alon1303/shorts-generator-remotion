@@ -1,0 +1,95 @@
+{
+  "assets": {
+    "audio": "audio.mp3",
+    "title_card": "title_card.png",
+    "background": "background.mp4"
+  },
+  "metadata": {
+    "title": "AITA for testing the Quick Run option exactly as requested?",
+    "subreddit": "RedditStories",
+    "fps": 30,
+    "duration_frames": 249
+  },
+  "words": [
+    {
+      "word": "AITA",
+      "startFrame": 0,
+      "endFrame": 12
+    },
+    {
+      "word": "for",
+      "startFrame": 15,
+      "endFrame": 27
+    },
+    {
+      "word": "testing",
+      "startFrame": 30,
+      "endFrame": 42
+    },
+    {
+      "word": "the",
+      "startFrame": 45,
+      "endFrame": 57
+    },
+    {
+      "word": "Quick",
+      "startFrame": 60,
+      "endFrame": 72
+    },
+    {
+      "word": "Run",
+      "startFrame": 75,
+      "endFrame": 87
+    },
+    {
+      "word": "option",
+      "startFrame": 90,
+      "endFrame": 102
+    },
+    {
+      "word": "exactly",
+      "startFrame": 105,
+      "endFrame": 117
+    },
+    {
+      "word": "as",
+      "startFrame": 120,
+      "endFrame": 132
+    },
+    {
+      "word": "requested?",
+      "startFrame": 135,
+      "endFrame": 147
+    },
+    {
+      "word": "This",
+      "startFrame": 162,
+      "endFrame": 174
+    },
+    {
+      "word": "is",
+      "startFrame": 177,
+      "endFrame": 189
+    },
+    {
+      "word": "the",
+      "startFrame": 192,
+      "endFrame": 204
+    },
+    {
+      "word": "hardcoded",
+      "startFrame": 207,
+      "endFrame": 219
+    },
+    {
+      "word": "first",
+      "startFrame": 222,
+      "endFrame": 234
+    },
+    {
+      "word": "part",
+      "startFrame": 237,
+      "endFrame": 249
+    }
+  ]
+}

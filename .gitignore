@@ -1,8 +1,6 @@
 # Virtual Environment
 backend_v2/venv/
 venv/
-env/
-.env/
 
 # Secrets
 .env
@@ -16,55 +14,25 @@ backend_v2/youtube/token.json
 # Python Cache
 **/__pycache__/
 *.pyc
-*.pyo
-
-# Node Modules
-node_modules/
-remotion_engine/node_modules/
-remotion_engine/dist/
-remotion_engine/out/
-remotion_engine/.remotion/
 
 # Outputs, Cache & Temporary files
 cache/
 outputs/
-uploads/
-downloads/
-temp_test_clips/
 backend_v2/outputs/
 backend_v2/cache/
 backend_v2/uploads/
-backend_v2/downloads/
 timing_debug.json
 title_card.png
 title_card_preview.png
-title_card_mock.png
-backend_v2/title_card_test.png
-
-# Generated Assets
-backend_v2/remotion_engine/public/audio_*.mp3
-remotion_engine/public/audio_*.mp3
 
 # Pipeline State & Logs
-*.log
-pipeline.log
-backend_v2/pipeline.log
 backend_v2/data/pipeline/
 backend_v2/data/pipeline_stats.json
 backend_v2/data/processed_posts.json
-backend_v2/data/backup_history/
 
 # Media files 
 *.mp4
 *.mov
-*.wav
-*.mp3
-!backend_v2/assets/audio/*.mp3
-!backend_v2/assets/sfx/*.wav
-
-# OS Files
-.DS_Store
-Thumbs.db
 
 # Cline Memory Bank - Branch specific state
 memory-bank/activeContext.md

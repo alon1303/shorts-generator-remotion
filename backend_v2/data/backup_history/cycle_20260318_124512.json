@@ -1,0 +1,39 @@
+{
+  "cycle_start": "2026-03-18T12:37:52.865000",
+  "stories_fetched": 3,
+  "stories_processed": 3,
+  "stories_successful": 3,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rwjlv4",
+      "title": "TIFU by building an app to track how many time my coworkers says \u2018circling back\u2019 in meetings. Now whole office uses it",
+      "subreddit": "tifu",
+      "url": "https://reddit.com/r/tifu/comments/1rwjlv4/tifu_by_building_an_app_to_track_how_many_time_my/",
+      "success": true,
+      "timestamp": "2026-03-18T12:40:55.781993"
+    },
+    {
+      "id": "1rwng7y",
+      "title": "AITA for canceling visitations because my late husband\u2019s sister always seems to know best?",
+      "subreddit": "AmItheAsshole",
+      "url": "https://reddit.com/r/AmItheAsshole/comments/1rwng7y/aita_for_canceling_visitations_because_my_late/",
+      "success": true,
+      "timestamp": "2026-03-18T12:42:42.244390"
+    },
+    {
+      "id": "1rwj085",
+      "title": "AITAH: For offering to take in my step nephew.",
+      "subreddit": "AmItheAsshole",
+      "url": "https://reddit.com/r/AmItheAsshole/comments/1rwj085/aitah_for_offering_to_take_in_my_step_nephew/",
+      "success": true,
+      "timestamp": "2026-03-18T12:45:12.390461"
+    }
+  ],
+  "cycle_duration": 439.525461,
+  "cycle_end": "2026-03-18T12:45:12.390461"
+}

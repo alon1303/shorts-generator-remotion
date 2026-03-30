@@ -1,0 +1,23 @@
+{
+  "cycle_start": "2026-03-19T20:11:07.559171",
+  "stories_fetched": 1,
+  "stories_processed": 1,
+  "stories_successful": 1,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rxgl3d",
+      "title": "TIFU by spending 8 years treating chronic headaches when the whole problem was that I thought diet soda counted as water",
+      "subreddit": "tifu",
+      "url": "https://reddit.com/r/tifu/comments/1rxgl3d/tifu_by_spending_8_years_treating_chronic/",
+      "success": true,
+      "timestamp": "2026-03-19T20:15:20.902085"
+    }
+  ],
+  "cycle_duration": 253.342914,
+  "cycle_end": "2026-03-19T20:15:20.902085"
+}

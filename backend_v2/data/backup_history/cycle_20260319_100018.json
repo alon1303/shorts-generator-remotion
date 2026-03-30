@@ -1,0 +1,14 @@
+{
+  "cycle_start": "2026-03-19T09:56:27.033886",
+  "stories_fetched": 1,
+  "stories_processed": 1,
+  "stories_successful": 0,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [],
+  "cycle_duration": 231.326238,
+  "cycle_end": "2026-03-19T10:00:18.360124"
+}

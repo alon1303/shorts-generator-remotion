@@ -1,0 +1,447 @@
+2026-03-25 22:53:33,968 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s3jzy7/aitah_for_calling_the_police_on_a_neighbor_who/ (Engine: elevenlabs)
+2026-03-25 22:53:33,968 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 22:53:33,968 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 22:53:33,968 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 22:53:33,968 - INFO - Fetching story by ID: 1s3jzy7
+2026-03-25 22:53:34,946 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s3jzy7.json "HTTP/1.1 200 OK"
+2026-03-25 22:53:34,948 - INFO - Fetched story by ID: AITAH for calling the police on a neighbor who kee...
+2026-03-25 22:53:34,948 - INFO - Fetched story: 'AITAH for calling the police on a neighbor who keeps stealing my cat?' by Great_Medium7499
+2026-03-25 22:53:34,954 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 22:53:34,954 - INFO - Processing story: 'AITAH for calling the police on a neighbor who kee...'
+2026-03-25 22:53:38,090 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 22:53:38,096 - INFO - Gender: F, Age: None
+2026-03-25 22:53:38,096 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 22:53:40,123 - INFO - Gemini extracted keywords for 'AITAH for calling the police o...': ['POLICE', 'STEALING', 'CAT', 'NEIGHBOR']
+2026-03-25 22:53:40,129 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 22:53:40,129 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 22:53:42,631 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\AITAH_for_calling_the_police_on_a_neighbor_who_kee\title_card.png
+2026-03-25 22:53:42,631 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 22:53:42,632 - INFO - TTSRouter initialized with engine: elevenlabs
+2026-03-25 22:53:42,632 - WARNING - Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 22:53:43,059 - INFO - ElevenLabs client initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 22:53:43,059 - INFO - Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 22:53:43,059 - INFO - TTSRouter: engine=elevenlabs, requested_voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 22:53:43,444 - INFO - ✂️ SILENCE REMOVAL: 7beb83c614beac9f6e50e22cb76b1265_1774470691.mp3
+2026-03-25 22:53:43,444 - INFO -    - Original duration: 2.60s
+2026-03-25 22:53:43,451 - INFO -    - New duration: 2.60s
+2026-03-25 22:53:43,451 - INFO -    - Time saved: 0.00s (0.0%)
+2026-03-25 22:53:43,509 - INFO - Title audio duration: 2.638s
+2026-03-25 22:53:46,427 - INFO - ✂️ SILENCE REMOVAL: 284f4695b8b0e993e57a2616b1bf1054_1774470702.mp3
+2026-03-25 22:53:46,436 - INFO -    - Original duration: 60.00s
+2026-03-25 22:53:46,436 - INFO -    - New duration: 51.27s
+2026-03-25 22:53:46,436 - INFO -    - Time saved: 8.73s (14.6%)
+2026-03-25 22:53:46,516 - INFO - Applying silence removal to story audio chunks
+2026-03-25 22:53:48,928 - INFO - ✂️ SILENCE REMOVAL: cleaned_1774472025_284f4695b8b0e993e57a2616b1bf1054_1774470702.mp3
+2026-03-25 22:53:48,928 - INFO -    - Original duration: 51.27s
+2026-03-25 22:53:48,928 - INFO -    - New duration: 51.27s
+2026-03-25 22:53:48,928 - INFO -    - Time saved: 0.00s (0.0%)
+2026-03-25 22:53:48,928 - INFO - Adjusted 262 timestamps for silence removal in chunk
+2026-03-25 22:53:49,668 - INFO - BackgroundManager initialized with directory: C:\Projects\ShortsGeneratorBetter\backend_v2\assets\backgrounds
+2026-03-25 22:53:49,668 - INFO - AudioMixer initialized with output directory: C:\Users\alon8\AppData\Local\Temp\mixed_audio
+2026-03-25 22:53:49,668 - INFO - VideoComposer initialized
+2026-03-25 22:53:49,668 - INFO - Composing Video Part 1/1...
+2026-03-25 22:53:49,668 - INFO - Creating dynamic background sequence: 55.2s with master playlist
+2026-03-25 22:53:49,668 - INFO - Initializing master playlist with all background videos
+2026-03-25 22:53:49,703 - INFO - Master playlist initialized with 76 videos
+2026-03-25 22:53:49,703 - INFO - Creating dynamic sequence using master playlist with 76 videos
+2026-03-25 22:54:06,695 - INFO - Concatenating 8 clips with re-encoding for stability
+2026-03-25 22:54:21,466 - INFO - Successfully created background video with re-encoding: C:\Users\alon8\AppData\Local\Temp\tmp06qar7gt\bg.mp4
+2026-03-25 22:54:21,471 - INFO - SubtitleGenerator initialized: 1080x1920, 2-5 words/phrase
+2026-03-25 22:54:53,277 - INFO - Part 1 SUCCESS: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\AITAH_for_calling_the_police_on_a_neighbor_who_kee\part_1.mp4
+2026-03-25 22:54:53,277 - INFO - ==================================================
+2026-03-25 22:54:53,277 - INFO - PIPELINE COMPLETED: 1 videos generated.
+2026-03-25 22:54:53,277 - INFO - Location: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\AITAH_for_calling_the_police_on_a_neighbor_who_kee
+2026-03-25 22:54:53,277 - INFO - ==================================================
+2026-03-25 22:55:28,405 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 22:55:28,405 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 22:55:28,405 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 22:55:28,405 - INFO - Fetching trending stories from 5 subreddits: ['AmItheAsshole', 'tifu', 'TrueOffMyChest', 'pettyrevenge', 'EntitledParents']
+2026-03-25 22:55:28,405 - INFO - Fetching trending stories from r/AmItheAsshole (time_filter=day)
+2026-03-25 22:55:29,039 - INFO - Fetching trending stories from r/tifu (time_filter=day)
+2026-03-25 22:55:29,039 - INFO - Fetching trending stories from r/TrueOffMyChest (time_filter=day)
+2026-03-25 22:55:29,039 - INFO - Fetching trending stories from r/pettyrevenge (time_filter=day)
+2026-03-25 22:55:29,039 - INFO - Fetching trending stories from r/EntitledParents (time_filter=day)
+2026-03-25 22:55:29,439 - INFO - HTTP Request: GET https://www.reddit.com/r/pettyrevenge/top.json?t=day&limit=4 "HTTP/1.1 200 OK"
+2026-03-25 22:55:29,440 - INFO - Fetched 2 stories from r/pettyrevenge
+2026-03-25 22:55:29,463 - INFO - HTTP Request: GET https://www.reddit.com/r/tifu/top.json?t=day&limit=4 "HTTP/1.1 200 OK"
+2026-03-25 22:55:29,466 - INFO - Fetched 1 stories from r/tifu
+2026-03-25 22:55:29,478 - INFO - HTTP Request: GET https://www.reddit.com/r/TrueOffMyChest/top.json?t=day&limit=4 "HTTP/1.1 200 OK"
+2026-03-25 22:55:29,482 - INFO - Fetched 1 stories from r/TrueOffMyChest
+2026-03-25 22:55:29,486 - INFO - HTTP Request: GET https://www.reddit.com/r/AmItheAsshole/top.json?t=day&limit=4 "HTTP/1.1 200 OK"
+2026-03-25 22:55:29,491 - INFO - Fetched 2 stories from r/AmItheAsshole
+2026-03-25 22:55:29,494 - INFO - HTTP Request: GET https://www.reddit.com/r/EntitledParents/top.json?t=day&limit=4 "HTTP/1.1 200 OK"
+2026-03-25 22:55:29,499 - INFO - Fetched 2 stories from r/EntitledParents
+2026-03-25 22:55:29,500 - INFO - Fetched 1 total stories from 5 subreddits
+2026-03-25 22:55:29,500 - INFO -   r/AmItheAsshole: 1 stories
+2026-03-25 22:55:31,475 - ERROR - Unexpected error: 
+2026-03-25 23:00:02,338 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s26ami/aitah_for_telling_my_wife_to_get_a_job_if_she/ (Engine: elevenlabs)
+2026-03-25 23:00:02,338 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 23:00:02,338 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 23:00:02,338 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 23:00:02,338 - INFO - Fetching story by ID: 1s26ami
+2026-03-25 23:00:02,935 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s26ami.json "HTTP/1.1 200 OK"
+2026-03-25 23:00:02,940 - INFO - Fetched story by ID: Aitah for telling my wife to get a job if she want...
+2026-03-25 23:00:02,940 - INFO - Fetched story: 'Aitah for telling my wife to get a job if she wants to subsidize the kids.' by Standard_Kick_9789
+2026-03-25 23:00:02,942 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 23:00:02,942 - INFO - Processing story: 'Aitah for telling my wife to get a job if she want...'
+2026-03-25 23:00:07,682 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 23:00:07,682 - INFO - Gender: F, Age: None
+2026-03-25 23:00:07,682 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 23:00:10,965 - INFO - Gemini extracted keywords for 'Aitah for telling my wife to g...': ['WIFE', 'JOB', 'SUBSIDIZE', 'KIDS']
+2026-03-25 23:00:10,972 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 23:00:10,972 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 23:00:12,509 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\Aitah_for_telling_my_wife_to_get_a_job_if_she_want\title_card.png
+2026-03-25 23:00:12,510 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 23:00:12,510 - INFO - TTSRouter initialized with engine: elevenlabs
+2026-03-25 23:00:12,510 - WARNING - Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 23:00:12,685 - INFO - ElevenLabs client initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 23:00:12,685 - INFO - Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 23:00:12,685 - INFO - TTSRouter: engine=elevenlabs, requested_voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 23:00:12,685 - INFO - Generating ElevenLabs TTS for 74 chars
+2026-03-25 23:00:14,064 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:00:14,101 - ERROR - ElevenLabs TTS failed: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+2026-03-25 23:00:14,101 - ERROR - Pipeline failed: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+2026-03-25 23:00:14,103 - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\main_pipeline_one_vid.py", line 95, in main_pipeline
+    title_audio_path, audio_chunks, subtitle_start_time, timing_data = await generate_title_and_story_audio(
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 175, in generate_title_and_story_audio
+    title_audio_path, title_duration, title_timestamps = await router.text_to_speech_with_timestamps(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 111, in text_to_speech_with_timestamps
+    return await client.text_to_speech_with_timestamps(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 139, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.audio]
+                                            ^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+
+2026-03-25 23:13:02,161 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s26ami/aitah_for_telling_my_wife_to_get_a_job_if_she/ (Engine: elevenlabs)
+2026-03-25 23:13:02,161 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 23:13:02,163 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 23:13:02,164 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 23:13:02,164 - INFO - Fetching story by ID: 1s26ami
+2026-03-25 23:13:02,736 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s26ami.json "HTTP/1.1 200 OK"
+2026-03-25 23:13:02,744 - INFO - Fetched story by ID: Aitah for telling my wife to get a job if she want...
+2026-03-25 23:13:02,744 - INFO - Fetched story: 'Aitah for telling my wife to get a job if she wants to subsidize the kids.' by Standard_Kick_9789
+2026-03-25 23:13:02,744 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 23:13:02,747 - INFO - Processing story: 'Aitah for telling my wife to get a job if she want...'
+2026-03-25 23:13:07,148 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 23:13:07,148 - INFO - Gender: F, Age: None
+2026-03-25 23:13:07,148 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 23:13:10,031 - INFO - Gemini extracted keywords for 'Aitah for telling my wife to g...': ['SUBSIDIZE', 'JOB', 'KIDS', 'WIFE']
+2026-03-25 23:13:10,031 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 23:13:10,031 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 23:13:11,634 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\Aitah_for_telling_my_wife_to_get_a_job_if_she_want\title_card.png
+2026-03-25 23:13:11,634 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 23:13:11,634 - INFO - [generate_title_and_story_audio] Starting audio generation for title and 1 story chunks with engine: elevenlabs
+2026-03-25 23:13:11,634 - INFO - [TTSRouter] Initialized with engine: elevenlabs
+2026-03-25 23:13:11,634 - WARNING - [TTSRouter] Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 23:13:11,794 - INFO - [ElevenLabsClient] Initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 23:13:11,794 - INFO - [TTSRouter] Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 23:13:11,794 - INFO - [TTSRouter] Requesting TTS with engine=elevenlabs, voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 23:13:11,810 - INFO - [ElevenLabsClient] Generating ElevenLabs TTS for 74 chars with voice yj30vwTGJxSHezdAGsv9
+2026-03-25 23:13:12,931 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:13:12,956 - ERROR - [ElevenLabsClient] ElevenLabs TTS failed for text: 'Aitah for telling my wife to get a job if she want...': 'AudioWithTimestampsResponse' object has no attribute 'audio'
+Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 135, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.audio]
+                                            ^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+2026-03-25 23:13:12,956 - ERROR - Pipeline failed: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+2026-03-25 23:13:12,956 - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\main_pipeline_one_vid.py", line 95, in main_pipeline
+    title_audio_path, audio_chunks, subtitle_start_time, timing_data = await generate_title_and_story_audio(
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 219, in generate_title_and_story_audio
+    title_audio_path, title_duration, title_timestamps = await router.text_to_speech_with_timestamps(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 113, in text_to_speech_with_timestamps
+    return await client.text_to_speech_with_timestamps(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 135, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.audio]
+                                            ^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+
+2026-03-25 23:13:53,876 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s26ami/aitah_for_telling_my_wife_to_get_a_job_if_she/ (Engine: elevenlabs)
+2026-03-25 23:13:53,876 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 23:13:53,876 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 23:13:53,876 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 23:13:53,876 - INFO - Fetching story by ID: 1s26ami
+2026-03-25 23:13:54,483 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s26ami.json "HTTP/1.1 200 OK"
+2026-03-25 23:13:54,485 - INFO - Fetched story by ID: Aitah for telling my wife to get a job if she want...
+2026-03-25 23:13:54,485 - INFO - Fetched story: 'Aitah for telling my wife to get a job if she wants to subsidize the kids.' by Standard_Kick_9789
+2026-03-25 23:13:54,485 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 23:13:54,485 - INFO - Processing story: 'Aitah for telling my wife to get a job if she want...'
+2026-03-25 23:13:57,296 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 23:13:57,296 - INFO - Gender: F, Age: None
+2026-03-25 23:13:57,298 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 23:14:02,254 - INFO - Gemini extracted keywords for 'Aitah for telling my wife to g...': ['AITAH', 'SUBSIDIZE', 'WIFE', 'JOB']
+2026-03-25 23:14:02,254 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 23:14:02,254 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 23:14:03,811 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\Aitah_for_telling_my_wife_to_get_a_job_if_she_want\title_card.png
+2026-03-25 23:14:03,811 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 23:14:03,813 - INFO - [generate_title_and_story_audio] Starting audio generation for title and 1 story chunks with engine: elevenlabs
+2026-03-25 23:14:03,813 - INFO - [TTSRouter] Initialized with engine: elevenlabs
+2026-03-25 23:14:03,813 - WARNING - [TTSRouter] Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 23:14:03,976 - INFO - [ElevenLabsClient] Initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 23:14:03,976 - INFO - [TTSRouter] Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 23:14:03,976 - INFO - [TTSRouter] Requesting TTS with engine=elevenlabs, voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 23:14:03,976 - INFO - [ElevenLabsClient] Generating ElevenLabs TTS for 74 chars with voice yj30vwTGJxSHezdAGsv9
+2026-03-25 23:14:05,065 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:14:05,156 - ERROR - [ElevenLabsClient] ElevenLabs TTS failed for text: 'Aitah for telling my wife to get a job if she want...': 'AudioWithTimestampsResponse' object has no attribute 'audio'
+Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 135, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.audio]
+                                            ^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+2026-03-25 23:14:05,159 - ERROR - Pipeline failed: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+2026-03-25 23:14:05,161 - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\main_pipeline_one_vid.py", line 95, in main_pipeline
+    title_audio_path, audio_chunks, subtitle_start_time, timing_data = await generate_title_and_story_audio(
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 219, in generate_title_and_story_audio
+    title_audio_path, title_duration, title_timestamps = await router.text_to_speech_with_timestamps(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 113, in text_to_speech_with_timestamps
+    return await client.text_to_speech_with_timestamps(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 135, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.audio]
+                                            ^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'audio'
+
+2026-03-25 23:15:17,729 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s26ami/aitah_for_telling_my_wife_to_get_a_job_if_she/ (Engine: elevenlabs)
+2026-03-25 23:15:17,729 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 23:15:17,745 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 23:15:17,745 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 23:15:17,745 - INFO - Fetching story by ID: 1s26ami
+2026-03-25 23:15:18,312 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s26ami.json "HTTP/1.1 200 OK"
+2026-03-25 23:15:18,317 - INFO - Fetched story by ID: Aitah for telling my wife to get a job if she want...
+2026-03-25 23:15:18,317 - INFO - Fetched story: 'Aitah for telling my wife to get a job if she wants to subsidize the kids.' by Standard_Kick_9789
+2026-03-25 23:15:18,317 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 23:15:18,317 - INFO - Processing story: 'Aitah for telling my wife to get a job if she want...'
+2026-03-25 23:15:23,525 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 23:15:23,527 - INFO - Gender: F, Age: None
+2026-03-25 23:15:23,527 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 23:15:26,227 - INFO - Gemini extracted keywords for 'Aitah for telling my wife to g...': ['SUBSIDIZE', 'JOB', 'WIFE', 'KIDS']
+2026-03-25 23:15:26,227 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 23:15:26,227 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 23:15:27,759 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\Aitah_for_telling_my_wife_to_get_a_job_if_she_want\title_card.png
+2026-03-25 23:15:27,759 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 23:15:27,759 - INFO - [generate_title_and_story_audio] Starting audio generation for title and 1 story chunks with engine: elevenlabs
+2026-03-25 23:15:27,759 - INFO - [TTSRouter] Initialized with engine: elevenlabs
+2026-03-25 23:15:27,759 - WARNING - [TTSRouter] Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 23:15:27,929 - INFO - [ElevenLabsClient] Initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 23:15:27,929 - INFO - [TTSRouter] Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 23:15:27,929 - INFO - [TTSRouter] Requesting TTS with engine=elevenlabs, voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 23:15:27,929 - INFO - [ElevenLabsClient] Generating ElevenLabs TTS for 74 chars with voice yj30vwTGJxSHezdAGsv9
+2026-03-25 23:15:29,027 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:15:29,051 - ERROR - [ElevenLabsClient] ElevenLabs TTS failed for text: 'Aitah for telling my wife to get a job if she want...': 'AudioWithTimestampsResponse' object has no attribute 'iter_bytes'
+Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 136, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.iter_bytes()]
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'iter_bytes'
+2026-03-25 23:15:29,051 - ERROR - Pipeline failed: 'AudioWithTimestampsResponse' object has no attribute 'iter_bytes'
+2026-03-25 23:15:29,051 - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\main_pipeline_one_vid.py", line 95, in main_pipeline
+    title_audio_path, audio_chunks, subtitle_start_time, timing_data = await generate_title_and_story_audio(
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 219, in generate_title_and_story_audio
+    title_audio_path, title_duration, title_timestamps = await router.text_to_speech_with_timestamps(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\tts_router.py", line 113, in text_to_speech_with_timestamps
+    return await client.text_to_speech_with_timestamps(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\ShortsGeneratorBetter\backend_v2\reddit_story\elevenlabs_client.py", line 136, in text_to_speech_with_timestamps
+    audio_data_chunks = [chunk for chunk in response.iter_bytes()]
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alon8\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'AudioWithTimestampsResponse' object has no attribute 'iter_bytes'
+
+2026-03-25 23:17:46,608 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s26ami/aitah_for_telling_my_wife_to_get_a_job_if_she/ (Engine: elevenlabs)
+2026-03-25 23:17:46,608 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 23:17:46,608 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 23:17:46,608 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 23:17:46,608 - INFO - Fetching story by ID: 1s26ami
+2026-03-25 23:17:47,168 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s26ami.json "HTTP/1.1 200 OK"
+2026-03-25 23:17:47,170 - INFO - Fetched story by ID: Aitah for telling my wife to get a job if she want...
+2026-03-25 23:17:47,170 - INFO - Fetched story: 'Aitah for telling my wife to get a job if she wants to subsidize the kids.' by Standard_Kick_9789
+2026-03-25 23:17:47,172 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 23:17:47,172 - INFO - Processing story: 'Aitah for telling my wife to get a job if she want...'
+2026-03-25 23:17:50,237 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 23:17:50,237 - INFO - Gender: F, Age: None
+2026-03-25 23:17:50,237 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 23:17:53,126 - INFO - Gemini extracted keywords for 'Aitah for telling my wife to g...': ['SUBSIDIZE', 'WIFE', 'JOB', 'KIDS']
+2026-03-25 23:17:53,131 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 23:17:53,131 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 23:17:54,671 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\Aitah_for_telling_my_wife_to_get_a_job_if_she_want\title_card.png
+2026-03-25 23:17:54,671 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 23:17:54,671 - INFO - TTSRouter initialized with engine: elevenlabs
+2026-03-25 23:17:54,671 - WARNING - Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 23:17:54,839 - INFO - ElevenLabs client initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 23:17:54,839 - INFO - Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 23:17:54,839 - INFO - TTSRouter: engine=elevenlabs, requested_voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 23:17:54,839 - INFO - Generating ElevenLabs TTS for 74 chars
+2026-03-25 23:17:55,928 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:17:55,962 - INFO - Response type: <class 'elevenlabs.types.audio_with_timestamps_response.AudioWithTimestampsResponse'>
+2026-03-25 23:17:56,146 - INFO - ✂️ SILENCE REMOVAL: 734c33258c114666d2d6271f8fb069d1_1774473475.mp3
+2026-03-25 23:17:56,146 - INFO -    - Original duration: 3.02s
+2026-03-25 23:17:56,146 - INFO -    - New duration: 3.02s
+2026-03-25 23:17:56,146 - INFO -    - Time saved: 0.00s (0.0%)
+2026-03-25 23:17:56,190 - INFO - Generating ElevenLabs TTS for 2461 chars
+2026-03-25 23:18:15,328 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:18:16,132 - INFO - Response type: <class 'elevenlabs.types.audio_with_timestamps_response.AudioWithTimestampsResponse'>
+2026-03-25 23:18:18,380 - INFO - ✂️ SILENCE REMOVAL: 2019cfdbbd9c4862cce185f3526cad3e_1774473496.mp3
+2026-03-25 23:18:18,380 - INFO -    - Original duration: 114.15s
+2026-03-25 23:18:18,380 - INFO -    - New duration: 87.19s
+2026-03-25 23:18:18,380 - INFO -    - Time saved: 26.96s (23.6%)
+2026-03-25 23:18:18,424 - INFO - Applying silence removal to story audio chunks
+2026-03-25 23:18:20,187 - INFO - ✂️ SILENCE REMOVAL: cleaned_1774473497_2019cfdbbd9c4862cce185f3526cad3e_1774473496.mp3
+2026-03-25 23:18:20,187 - INFO -    - Original duration: 87.19s
+2026-03-25 23:18:20,187 - INFO -    - New duration: 87.19s
+2026-03-25 23:18:20,187 - INFO -    - Time saved: 0.00s (0.0%)
+2026-03-25 23:18:20,785 - INFO - BackgroundManager initialized with directory: C:\Projects\ShortsGeneratorBetter\backend_v2\assets\backgrounds
+2026-03-25 23:18:20,786 - INFO - AudioMixer initialized with output directory: C:\Users\alon8\AppData\Local\Temp\mixed_audio
+2026-03-25 23:18:20,786 - INFO - VideoComposer initialized
+2026-03-25 23:18:20,786 - INFO - Composing Video Part 1/1...
+2026-03-25 23:18:20,786 - INFO - Creating dynamic background sequence: 91.6s with master playlist
+2026-03-25 23:18:20,786 - INFO - Initializing master playlist with all background videos
+2026-03-25 23:18:20,791 - INFO - Master playlist initialized with 76 videos
+2026-03-25 23:18:20,791 - INFO - Creating dynamic sequence using master playlist with 76 videos
+2026-03-25 23:18:40,531 - ERROR - FFmpeg failed with error: ffmpeg version N-117763-ge35587250c-20241113 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (crosstool-NG 1.26.0.120_4d36f27)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libfreetype --enable-libfribidi --enable-gmp --enable-libxml2 --enable-lzma --enable-fontconfig --enable-libharfbuzz --enable-libvorbis --enable-opencl --disable-libpulse --enable-libvmaf --disable-libxcb --disable-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame --enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libshaderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=20241113
+  libavutil      59. 46.100 / 59. 46.100
+  libavcodec     61. 24.100 / 61. 24.100
+  libavformat    61.  9.100 / 61.  9.100
+  libavdevice    61.  4.100 / 61.  4.100
+  libavfilter    10.  6.101 / 10.  6.101
+  libswscale      8.  9.101 /  8.  9.101
+  libswresample   5.  4.100 /  5.  4.100
+  libpostproc    58.  4.100 / 58.  4.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Projects\ShortsGeneratorBetter\backend_v2\assets\backgrounds\cats\A talking cat 😂#cutecat #funnycat #cat #fyp #funny.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.9.100
+    comment         : vid:v12044gd0000cer3l73c77u71h1m84e0
+  Duration: 00:00:14.61, start: 0.000000, bitrate: 4401 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], 4265 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc61.24.100 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 (h264) -> crop:default
+  fps:default -> Stream #0:0 (libx264)
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 000002441abc0100] using SAR=1/1
+[libx264 @ 000002441abc0100] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000002441abc0100] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 000002441abc0100] 264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=6 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'C:\Users\alon8\AppData\Local\Temp\tmpfuzbrkfv\clip_11_788359a4.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    comment         : vid:v12044gd0000cer3l73c77u71h1m84e0
+    encoder         : Lavf61.9.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920 [SAR 1:1 DAR 9:16], q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc61.24.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      encoder         : Lavc61.24.100 aac
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+[mov,mp4,m4a,3gp,3g2,mj2 @ 000002441860c8c0] Packet corrupt (stream = 0, dts = 23552).
+[h264 @ 000002441867eb00] Invalid NAL unit size (13682 > 5596).
+[h264 @ 000002441867eb00] missing picture in access unit with size 5600
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 00000244185bab40] corrupt input packet in stream 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 000002441860c8c0] stream 1, offset 0x134291: partial file
+[in#0/mov,mp4,m4a,3gp,3g2,mj2 @ 00000244185bab40] Error during demuxing: Immediate exit requested
+[h264 @ 000002441b206a80] Invalid NAL unit size (13682 > 5596).
+[h264 @ 000002441b206a80] Error splitting the input into NAL units.
+[vist#0:0/h264 @ 000002441a6299c0] [dec:h264 @ 000002441a6287c0] Decoding error: Invalid data found when processing input
+Received > 3 system signals, hard exiting
+
+2026-03-25 23:18:40,534 - ERROR - Failed to extract clip 11 from A talking cat 😂#cutecat #funnycat #cat #fyp #funny.mp4
+2026-03-25 23:28:49,494 - INFO - Starting Main Pipeline for URL: https://www.reddit.com/r/AITAH/comments/1s3fxxv/aitah_for_rejecting_my_classmate/ (Engine: elevenlabs)
+2026-03-25 23:28:49,494 - INFO - Loaded 6 processed post IDs from C:\Projects\ShortsGeneratorBetter\backend_v2\data\processed_posts.json
+2026-03-25 23:28:49,494 - INFO - Reddit HTTP client initialized (user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...)
+2026-03-25 23:28:49,494 - INFO - Processed posts tracking enabled: 6 posts in history
+2026-03-25 23:28:49,494 - INFO - Fetching story by ID: 1s3fxxv
+2026-03-25 23:28:50,078 - INFO - HTTP Request: GET https://www.reddit.com/by_id/t3_1s3fxxv.json "HTTP/1.1 200 OK"
+2026-03-25 23:28:50,097 - INFO - Fetched story by ID: AITAH for rejecting my classmate...
+2026-03-25 23:28:50,098 - INFO - Fetched story: 'AITAH for rejecting my classmate' by mr-bean-the-real-bea
+2026-03-25 23:28:50,099 - INFO - StoryProcessor initialized: 30-60s parts. AI available: True
+2026-03-25 23:28:50,100 - INFO - Processing story: 'AITAH for rejecting my classmate...'
+2026-03-25 23:28:53,128 - INFO - AI Analysis: 1 parts detected.
+2026-03-25 23:28:53,128 - INFO - Gender: F, Age: None
+2026-03-25 23:28:53,128 - INFO - Extracting high-impact keywords for title card...
+2026-03-25 23:28:55,209 - INFO - Gemini extracted keywords for 'AITAH for rejecting my classma...': ['AITAH', 'REJECTING', 'CLASSMATE']
+2026-03-25 23:28:55,225 - INFO - Jinja2 environment initialized with template directory: C:\Projects\ShortsGeneratorBetter\backend_v2\templates
+2026-03-25 23:28:55,225 - INFO - RedditImageGenerator initialized with output directory: C:\Users\alon8\AppData\Local\Temp\reddit_overlays
+2026-03-25 23:28:56,758 - INFO - Title card generated at: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\AITAH_for_rejecting_my_classmate\title_card.png
+2026-03-25 23:28:56,758 - INFO - Generating narration and calculating word timestamps...
+2026-03-25 23:28:56,758 - INFO - TTSRouter initialized with engine: elevenlabs
+2026-03-25 23:28:56,758 - WARNING - Overriding Edge TTS voice 'en-US-ChristopherNeural' with ElevenLabs default for ElevenLabs engine
+2026-03-25 23:28:56,926 - INFO - ElevenLabs client initialized: voice=pNInz6obpgDQGcFmaJgB, model=eleven_multilingual_v2
+2026-03-25 23:28:56,926 - INFO - Using ElevenLabs female voice: yj30vwTGJxSHezdAGsv9
+2026-03-25 23:28:56,926 - INFO - TTSRouter: engine=elevenlabs, requested_voice=yj30vwTGJxSHezdAGsv9, gender=F
+2026-03-25 23:28:56,926 - INFO - Generating ElevenLabs TTS for 32 chars
+2026-03-25 23:28:58,109 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:28:58,127 - INFO - Response type: <class 'elevenlabs.types.audio_with_timestamps_response.AudioWithTimestampsResponse'>
+2026-03-25 23:28:58,195 - INFO - Generating ElevenLabs TTS for 1375 chars
+2026-03-25 23:29:09,542 - INFO - HTTP Request: POST https://api.elevenlabs.io/v1/text-to-speech/yj30vwTGJxSHezdAGsv9/with-timestamps?output_format=mp3_44100_128 "HTTP/1.1 200 OK"
+2026-03-25 23:29:10,032 - INFO - Response type: <class 'elevenlabs.types.audio_with_timestamps_response.AudioWithTimestampsResponse'>
+2026-03-25 23:29:10,084 - INFO - Applying silence removal to title audio
+2026-03-25 23:29:10,232 - INFO - ✂️ SILENCE REMOVAL: 12949d53b9cf63bf2a5f431d1f6e4431_1774474138.mp3
+2026-03-25 23:29:10,232 - INFO -    - Original duration: 1.67s
+2026-03-25 23:29:10,232 - INFO -    - New duration: 1.25s
+2026-03-25 23:29:10,232 - INFO -    - Time saved: 0.42s (25.2%)
+2026-03-25 23:29:10,281 - INFO - Applying silence removal to story audio chunks
+2026-03-25 23:29:11,671 - INFO - ✂️ SILENCE REMOVAL: 5fa696fc22d30fd6d214e32784b8e2c7_1774474150.mp3
+2026-03-25 23:29:11,671 - INFO -    - Original duration: 68.36s
+2026-03-25 23:29:11,671 - INFO -    - New duration: 52.82s
+2026-03-25 23:29:11,671 - INFO -    - Time saved: 15.54s (22.7%)
+2026-03-25 23:29:12,059 - INFO - BackgroundManager initialized with directory: C:\Projects\ShortsGeneratorBetter\backend_v2\assets\backgrounds
+2026-03-25 23:29:12,059 - INFO - AudioMixer initialized with output directory: C:\Users\alon8\AppData\Local\Temp\mixed_audio
+2026-03-25 23:29:12,059 - INFO - VideoComposer initialized
+2026-03-25 23:29:12,059 - INFO - Composing Video Part 1/1...
+2026-03-25 23:29:12,059 - INFO - Creating dynamic background sequence: 55.5s with master playlist
+2026-03-25 23:29:12,059 - INFO - Initializing master playlist with all background videos
+2026-03-25 23:29:12,059 - INFO - Master playlist initialized with 76 videos
+2026-03-25 23:29:12,059 - INFO - Creating dynamic sequence using master playlist with 76 videos
+2026-03-25 23:29:25,775 - INFO - Concatenating 7 clips with re-encoding for stability
+2026-03-25 23:29:50,436 - INFO - Successfully created background video with re-encoding: C:\Users\alon8\AppData\Local\Temp\tmpfak_6vnu\bg.mp4
+2026-03-25 23:29:50,446 - INFO - SubtitleGenerator initialized: 1080x1920, 2-5 words/phrase
+2026-03-25 23:30:32,283 - INFO - Part 1 SUCCESS: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\AITAH_for_rejecting_my_classmate\part_1.mp4
+2026-03-25 23:30:32,284 - INFO - ==================================================
+2026-03-25 23:30:32,284 - INFO - PIPELINE COMPLETED: 1 videos generated.
+2026-03-25 23:30:32,285 - INFO - Location: C:\Projects\ShortsGeneratorBetter\backend_v2\outputs\AITAH_for_rejecting_my_classmate
+2026-03-25 23:30:32,285 - INFO - ==================================================

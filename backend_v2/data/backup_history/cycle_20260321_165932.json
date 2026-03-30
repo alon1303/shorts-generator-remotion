@@ -1,0 +1,23 @@
+{
+  "cycle_start": "2026-03-21T16:51:40.692546",
+  "stories_fetched": 1,
+  "stories_processed": 1,
+  "stories_successful": 1,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rzlkwg",
+      "title": "TIFU by accidentally becoming the other woman and falling *naked* in front of his girlfriend",
+      "subreddit": "tifu",
+      "url": "https://reddit.com/r/tifu/comments/1rzlkwg/tifu_by_accidentally_becoming_the_other_woman_and/",
+      "success": true,
+      "timestamp": "2026-03-21T16:59:32.988136"
+    }
+  ],
+  "cycle_duration": 472.29559,
+  "cycle_end": "2026-03-21T16:59:32.988136"
+}

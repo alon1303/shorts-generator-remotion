@@ -1,0 +1,23 @@
+{
+  "cycle_start": "2026-03-18T20:54:09.794375",
+  "stories_fetched": 1,
+  "stories_processed": 1,
+  "stories_successful": 1,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rwng7y",
+      "title": "AITA for canceling visitations because my late husband\u2019s sister always seems to know best?",
+      "subreddit": "AmItheAsshole",
+      "url": "https://reddit.com/r/AmItheAsshole/comments/1rwng7y/aita_for_canceling_visitations_because_my_late/",
+      "success": true,
+      "timestamp": "2026-03-18T20:56:01.139777"
+    }
+  ],
+  "cycle_duration": 111.345402,
+  "cycle_end": "2026-03-18T20:56:01.139777"
+}

@@ -1,0 +1,23 @@
+{
+  "cycle_start": "2026-03-21T11:07:48.451636",
+  "stories_fetched": 1,
+  "stories_processed": 1,
+  "stories_successful": 1,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1ryzn8r",
+      "title": "AITA for getting upset at my girlfriend for mocking me when I cried after watching a show with emotionally deep ending?",
+      "subreddit": "AmItheAsshole",
+      "url": "https://reddit.com/r/AmItheAsshole/comments/1ryzn8r/aita_for_getting_upset_at_my_girlfriend_for/",
+      "success": true,
+      "timestamp": "2026-03-21T11:11:42.513442"
+    }
+  ],
+  "cycle_duration": 234.061806,
+  "cycle_end": "2026-03-21T11:11:42.513442"
+}

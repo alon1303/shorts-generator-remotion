@@ -1,0 +1,39 @@
+{
+  "cycle_start": "2026-03-17T23:19:21.029172",
+  "stories_fetched": 3,
+  "stories_processed": 3,
+  "stories_successful": 3,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rvru5m",
+      "title": "AITA for sneaking my mom some alcohol when she is on hospice?",
+      "subreddit": "AmItheAsshole",
+      "url": "https://reddit.com/r/AmItheAsshole/comments/1rvru5m/aita_for_sneaking_my_mom_some_alcohol_when_she_is/",
+      "success": true,
+      "timestamp": "2026-03-17T23:21:38.284785"
+    },
+    {
+      "id": "1rw9lmw",
+      "title": "The Austrian climber who abandoned his girlfriend to die is horrifying because I could have been her",
+      "subreddit": "TrueOffMyChest",
+      "url": "https://reddit.com/r/TrueOffMyChest/comments/1rw9lmw/the_austrian_climber_who_abandoned_his_girlfriend/",
+      "success": true,
+      "timestamp": "2026-03-17T23:25:41.654048"
+    },
+    {
+      "id": "1rwdahg",
+      "title": "Drew on my dad's sandwiches",
+      "subreddit": "pettyrevenge",
+      "url": "https://reddit.com/r/pettyrevenge/comments/1rwdahg/drew_on_my_dads_sandwiches/",
+      "success": true,
+      "timestamp": "2026-03-17T23:27:15.553487"
+    }
+  ],
+  "cycle_duration": 474.524315,
+  "cycle_end": "2026-03-17T23:27:15.553487"
+}

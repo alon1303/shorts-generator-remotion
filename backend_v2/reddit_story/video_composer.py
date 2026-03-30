@@ -18,7 +18,6 @@ from .subtitle_generator import SubtitleGenerator
 from .audio_utils import adjust_word_timestamps, detect_silence_at_beginning
 from .image_generator_new import TitlePopupTimingCalculator
 from .audio_mixer import AudioMixer
-from .remotion_composer import RemotionComposer
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -29,8 +28,7 @@ class VideoComposer:
     def __init__(self, background_manager: Optional[BackgroundManager] = None):
         self.background_manager = background_manager or BackgroundManager()
         self.audio_mixer = AudioMixer()
-        self.remotion_composer = RemotionComposer()
-        logger.info(f"VideoComposer initialized with engine: {settings.VIDEO_ENGINE}")
+        logger.info("VideoComposer initialized")
     
     def _validate_background_fps(self, background_path: Path) -> bool:
         try:
@@ -202,27 +200,52 @@ class VideoComposer:
         if not audio_chunk.audio_path.exists(): return None
         if output_path is None: output_path = Path(tempfile.gettempdir()) / f"vp_{uuid.uuid4().hex}.mp4"
         
-        # Remotion Engine support for parts
-        if settings.VIDEO_ENGINE == "remotion":
-            logger.info("Using Remotion Engine for video part composition")
-            success = self.remotion_composer.render_video(
-                audio_chunks=[audio_chunk],
-                title=timing_data.get('title', 'Reddit Story') if timing_data else 'Reddit Story',
-                author=timing_data.get('author', 'u/unknown') if timing_data else 'u/unknown',
-                subreddit=timing_data.get('subreddit', 'r/reddit') if timing_data else 'r/reddit',
-                title_card_duration=timing_data.get('card_end_time', 4.0) if timing_data else 4.0,
-                output_path=output_path,
-                background_music_path=bg_music_path
+        with tempfile.TemporaryDirectory() as td:
+            tp = Path(td)
+            bg = self.background_manager.create_sequential_background_clip(audio_chunk.duration_seconds, theme, tp / "bg.mp4")
+            if not bg: return None
+            sub_path = tp / "subs.ass"
+            self.create_subtitles_for_text(
+                audio_chunk.text, 
+                audio_chunk.duration_seconds, 
+                sub_path, 
+                audio_chunk.word_timestamps, 
+                audio_chunk.audio_path, 
+                timing_data=timing_data, 
+                custom_keywords=custom_keywords, 
+                title_word_count=timing_data.get('title_word_count', 0) if timing_data else 0,
+                timing_map=audio_chunk.timing_map
             )
-            if success:
-                return output_path
-            else:
-                logger.error("Remotion render for part failed")
+            if not self.combine_audio_with_background(audio_chunk.audio_path, bg, output_path, sub_path, overlay_image_path, pop_sfx_path=pop_sfx_path, bg_music_path=bg_music_path, timing_data=timing_data):
                 return None
-
-        # FFmpeg path removed - Remotion only
-        logger.warning("FFmpeg engine is disabled. Remotion is required.")
-        return None
+        
+        # Apply final video speed if needed
+        final_speed = getattr(settings, 'FINAL_VIDEO_SPEED', 1.0)
+        if final_speed != 1.0:
+            logger.info(f"Applying final video speed: {final_speed}x to part")
+            temp_speed_path = output_path.with_name(f"temp_speed_{uuid.uuid4().hex}.mp4")
+            shutil.copy2(output_path, temp_speed_path)
+            
+            video_pts = 1.0 / final_speed
+            audio_tempo = final_speed
+            cmd = [
+                'ffmpeg', '-y', 
+                '-i', str(temp_speed_path), 
+                '-filter_complex', f'[0:v]setpts={video_pts}*PTS[v];[0:a]atempo={audio_tempo}[a]', 
+                '-map', '[v]', '-map', '[a]',
+                '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23',
+                '-c:a', 'aac',
+                str(output_path)
+            ]
+            result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
+            if result.returncode != 0:
+                logger.error(f"Failed to apply final video speed to part: {result.stderr}")
+                shutil.copy2(temp_speed_path, output_path)
+            
+            if temp_speed_path.exists():
+                temp_speed_path.unlink()
+                
+        return output_path
 
     def create_complete_shorts_video(
         self,
@@ -236,28 +259,52 @@ class VideoComposer:
         custom_keywords: Optional[List[str]] = None
     ) -> Path:
         if output_path is None: output_path = settings.OUTPUT_DIR / f"shorts_{uuid.uuid4().hex}.mp4"
+        vps = []
+        for i, chunk in enumerate(audio_chunks, 1):
+            vp = self.create_video_part(chunk, theme, overlay_image_path=overlay_image_path if i==1 else None, pop_sfx_path=pop_sfx_path if i==1 else None, bg_music_path=bg_music_path, timing_data=timing_data if i==1 else None, custom_keywords=custom_keywords)
+            if vp: vps.append(vp)
         
-        # New Remotion Engine path
-        if settings.VIDEO_ENGINE == "remotion":
-            logger.info("Using Remotion Engine for video composition")
-            success = self.remotion_composer.render_video(
-                audio_chunks=audio_chunks,
-                title=timing_data.get('title', 'Reddit Story') if timing_data else 'Reddit Story',
-                author=timing_data.get('author', 'u/unknown') if timing_data else 'u/unknown',
-                subreddit=timing_data.get('subreddit', 'r/reddit') if timing_data else 'r/reddit',
-                title_card_duration=timing_data.get('card_end_time', 4.0) if timing_data else 4.0,
-                output_path=output_path,
-                background_music_path=bg_music_path
-            )
-            if success:
-                return output_path
-            else:
-                logger.error("Remotion render failed")
-                return None
-
-        # FFmpeg path removed - Remotion only
-        logger.warning("FFmpeg engine is disabled. Remotion is required.")
-        return None
+        final_speed = getattr(settings, 'FINAL_VIDEO_SPEED', 1.0)
+        
+        # Determine intermediate path if we need to apply speed
+        temp_combined_path = output_path
+        if final_speed != 1.0:
+            temp_combined_path = output_path.with_name(f"temp_combined_{uuid.uuid4().hex}.mp4")
+            
+        if len(vps) == 1: 
+            shutil.copy2(vps[0], temp_combined_path)
+        else:
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
+                for p in vps: f.write(f"file '{str(p).replace('\\','/')}'\n")
+                fl = Path(f.name)
+            subprocess.run(['ffmpeg', '-y', '-f', 'concat', '-safe', '0', '-i', str(fl), '-c', 'copy', str(temp_combined_path)], capture_output=True, text=True, encoding='utf-8')
+            fl.unlink()
+            
+        # Apply final video speed
+        if final_speed != 1.0:
+            logger.info(f"Applying final video speed: {final_speed}x")
+            video_pts = 1.0 / final_speed
+            audio_tempo = final_speed
+            cmd = [
+                'ffmpeg', '-y', 
+                '-i', str(temp_combined_path), 
+                '-filter_complex', f'[0:v]setpts={video_pts}*PTS[v];[0:a]atempo={audio_tempo}[a]', 
+                '-map', '[v]', '-map', '[a]',
+                '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23',
+                '-c:a', 'aac',
+                str(output_path)
+            ]
+            result = subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8')
+            if result.returncode != 0:
+                logger.error(f"Failed to apply final video speed: {result.stderr}")
+                # Fallback
+                shutil.copy2(temp_combined_path, output_path)
+            
+            # Cleanup temp combined
+            if temp_combined_path.exists():
+                temp_combined_path.unlink()
+                
+        return output_path
 
 def create_shorts_video(audio_chunks, theme=None, output_path=None, overlay_image_path=None, pop_sfx_path=None, bg_music_path=None, timing_data=None, custom_keywords=None):
     return VideoComposer().create_complete_shorts_video(audio_chunks, theme, output_path, overlay_image_path, pop_sfx_path, bg_music_path, timing_data, custom_keywords)

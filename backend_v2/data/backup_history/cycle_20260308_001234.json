@@ -1,0 +1,39 @@
+{
+  "cycle_start": "2026-03-07T23:53:36.555957",
+  "stories_fetched": 3,
+  "stories_processed": 3,
+  "stories_successful": 3,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rmvid3",
+      "title": "But you're daughter hit MY car..",
+      "subreddit": "EntitledParents",
+      "url": "https://reddit.com/r/entitledparents/comments/1rmvid3/but_youre_daughter_hit_my_car/",
+      "success": true,
+      "timestamp": "2026-03-07T23:58:17.922979"
+    },
+    {
+      "id": "1rnalz8",
+      "title": "MIL wanted me to board my dog so her could stay in my house.",
+      "subreddit": "EntitledParents",
+      "url": "https://reddit.com/r/entitledparents/comments/1rnalz8/mil_wanted_me_to_board_my_dog_so_her_could_stay/",
+      "success": true,
+      "timestamp": "2026-03-08T00:03:41.575264"
+    },
+    {
+      "id": "1rn534u",
+      "title": "AITA for not sending a guy I\u2019ve been talking to $60 after I already sent him $40?",
+      "subreddit": "AmItheAsshole",
+      "url": "https://reddit.com/r/AmItheAsshole/comments/1rn534u/aita_for_not_sending_a_guy_ive_been_talking_to_60/",
+      "success": true,
+      "timestamp": "2026-03-08T00:12:34.151710"
+    }
+  ],
+  "cycle_duration": 1137.595753,
+  "cycle_end": "2026-03-08T00:12:34.151710"
+}

@@ -1,0 +1,14 @@
+{
+  "total_stories_processed": 45,
+  "successful_videos": 27,
+  "failed_videos": 18,
+  "quota_exceeded": 0,
+  "network_errors": 0,
+  "processing_errors": 0,
+  "upload_errors": 0,
+  "last_updated": "2026-03-21T16:59:32.988136",
+  "runtime_hours": 0.13126002138888887,
+  "average_story_duration": 195.20000000000002,
+  "average_video_duration": 161.302734,
+  "success_rate": 60.0
+}

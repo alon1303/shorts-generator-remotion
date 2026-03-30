@@ -1,287 +1,62 @@
 # System Patterns: Architecture and Design
 
 ## System Overview
-ShortsGenerator is a modular Python/FastAPI application that converts Reddit stories into short-form videos. The system follows a pipeline architecture where data flows through specialized processing stages.
+ShortsGenerator employs a decoupled architecture separating data generation from video rendering. A Python backend prepares the story, audio, and metadata, while a Remotion (React/TypeScript) frontend handles the actual video composition and rendering.
 
 ## High-Level Architecture
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Input Layer   │───▶│ Processing Layer│───▶│  Output Layer   │
-│  - Reddit URLs  │    │  - Story Split  │    │  - Video Files  │
-│  - Custom Text  │    │  - TTS Narration│    │  - Subtitles    │
-│  - Subreddit    │    │  - Backgrounds  │    │  - Title Cards  │
-└─────────────────┘    │  - Subtitles    │    └─────────────────┘
-                       │  - Composition  │
-                       └─────────────────┘
+┌─────────────────────────┐       ┌─────────────────────────┐
+│  Python Backend Layer   │       │ Remotion Frontend Layer │
+│  (Asset & Data Gen)     │       │ (Video Composition)     │
+│                         │       │                         │
+│ - Fetch Reddit Story    │ JSON  │ - Parse Data Contract   │
+│ - Generate TTS Audio    │ Contract│ - Render Title Card   │
+│ - Create Title Card PNG ├───────▶ - Sync Audio & Subtitles│
+│ - Select Background MP4 │       │ - Apply Animations      │
+│ - Calculate Timestamps  │       │ - Export MP4 Output     │
+└─────────────────────────┘       └─────────────────────────┘
 ```
+
+## The Data Contract (Core Interface)
+The sole bridge between the Backend and Frontend is a dedicated output folder per project containing exactly:
+1. `audio.mp3` - The generated TTS narration.
+2. `title_card.png` - A static image asset for the story title.
+3. `background.mp4` - The selected background video clip.
+4. `composition_data.json` - The main data contract.
+
+### `composition_data.json` Rules
+- Contains relative paths to the generated assets.
+- Contains the text and timing for subtitles.
+- **CRITICAL TIMING RULE:** The Python backend MUST convert all word timestamps from seconds to frames (based on 30 FPS) before writing them to the JSON. 
+  - Formula: `frame = math.floor(seconds * 30)`
 
 ## Core Components
 
-### 1. Input Processing (`reddit_story/`)
-- **RedditClient**: Fetches stories from Reddit using public JSON endpoints
-- **StoryProcessor**: Splits stories into optimal segments for narration
-- **Models**: Data classes (AudioChunk, WordTimestamp, RedditStory)
+### 1. Backend: Data & Asset Exporter (Python)
+- **Reddit/NLP**: Fetches content and splits stories optimally for narration.
+- **Audio/TTS**: Generates narration via Edge TTS/ElevenLabs.
+- **Asset Generator**: Selects background clips and generates static images (e.g., Title Card via Playwright/HTML).
+- **Data Compiler**: Compiles timings, converts seconds to 30fps frames, and writes the `composition_data.json`.
+- **Constraint**: *No FFmpeg subprocesses for video composition. No rendering logic.*
 
-### 2. Audio Generation (`reddit_story/`)
-- **TTS Router**: Routes to different TTS engines (Edge TTS, ElevenLabs)
-- **EdgeTTS Client**: Free Microsoft Edge TTS integration
-- **AudioMixer**: Mixes narration with sound effects
-
-### 3. Visual Components (`reddit_story/`)
-- **BackgroundManager**: Manages background video selection and processing
-- **ImageGenerator**: Creates title cards using Playwright HTML-to-image
-- **SubtitleGenerator**: Generates ASS format subtitles with word-level highlighting
-
-### 4. Video Composition (`reddit_story/`)
-- **VideoComposer**: Main composition engine combining all elements
-- **TimingCalculator**: Calculates timing for title card animations
-
-### 5. API Layer (`backend_v2/`)
-- **FastAPI Application**: REST API with background job processing
-- **Job Management**: In-memory job tracking for async operations
-- **Configuration**: Centralized settings management
+### 2. Frontend: Video Renderer (Remotion)
+- **Composition Engine**: React components mapping the JSON data to timeline sequences.
+- **Audio Sync**: Uses Remotion's `<Audio />` and frame-based math to sync subtitles perfectly.
+- **Visual Effects**: CSS animations and Remotion interpolations for transitions and word-level highlighting.
+- **Export**: Generates the final `.mp4` using Remotion's rendering CLI/API.
 
 ## Data Flow Patterns
 
 ### Primary Pipeline Flow
 ```
-1. Story Acquisition → 2. Text Processing → 3. Audio Generation → 4. Visual Generation → 5. Video Composition
+1. Python Input (Reddit URL) 
+   → 2. Python NLP & TTS (Seconds-based timings) 
+   → 3. Python Frame Conversion (Seconds to 30FPS Frames)
+   → 4. Python Asset Bundling (Output Folder + JSON Contract)
+   → 5. Remotion Render (Reads Folder, Composes UI, Outputs MP4)
 ```
 
-### Component Interaction Pattern
-```python
-# Typical usage pattern
-story = await reddit_client.fetch_story(url)
-processed = story_processor.process_story(story)
-audio_chunks = await tts_router.generate_audio(processed)
-video = video_composer.create_video(audio_chunks)
-```
-
-## Key Design Patterns
-
-### 1. Pipeline Pattern
-Each component processes input and passes output to the next component. Components are loosely coupled and can be tested independently.
-
-### 2. Builder Pattern (VideoComposer)
-VideoComposer builds videos step-by-step:
-- Creates background clips
-- Generates subtitles  
-- Combines audio with visuals
-- Applies post-processing effects
-
-### 3. Strategy Pattern (TTS Router)
-Different TTS engines can be swapped via configuration:
-- Edge TTS (default, free)
-- ElevenLabs (premium, higher quality)
-
-### 4. Factory Pattern (BackgroundManager)
-Creates different types of background clips:
-- Single clip from one video
-- Sequential clips from multiple videos
-- Theme-based selection
-
-### 5. Observer Pattern (Job Tracking)
-API endpoints notify clients of processing progress through status updates.
-
-## File Organization Pattern
-```
-backend_v2/
-├── reddit_story/          # Core video generation logic
-│   ├── models.py          # Data classes
-│   ├── reddit_client.py   # Reddit API
-│   ├── story_processor.py # Text processing
-│   ├── tts_router.py      # Audio generation
-│   ├── background_manager.py # Background videos
-│   ├── subtitle_generator.py # Subtitles
-│   └── video_composer.py  # Main composition engine
-├── config/
-│   └── settings.py        # Configuration management
-├── main.py               # FastAPI application
-├── quick_preview.py      # Quick preview generation tool
-└── tests/                # Test files
-```
-
-## Configuration Patterns
-
-### Settings Management
-- **Centralized Configuration**: All settings in `config/settings.py`
-- **Environment Variable Support**: `.env` file loading via pydantic-settings
-- **Validation**: Automatic validation with pydantic
-- **Directory Management**: Auto-creates necessary directories
-
-### Configuration Categories
-```python
-# Application settings
-APP_NAME, APP_VERSION, DEBUG
-
-# Server settings  
-HOST, PORT, WORKERS
-
-# Reddit settings
-DEFAULT_SUBREDDIT, MIN_STORY_SCORE
-
-# TTS settings
-TTS_ENGINE, DEFAULT_VOICE_ID
-
-# Video settings
-TARGET_WIDTH, TARGET_HEIGHT, VIDEO_CRF
-
-# Story settings
-MIN_PART_DURATION, MAX_PART_DURATION
-```
-
-## Error Handling Patterns
-
-### Component-Level Errors
-Each component raises specific exceptions:
-- `FileNotFoundError`: Missing required files
-- `ValueError`: Invalid parameters
-- `RuntimeError`: Processing failures
-- `HTTPException`: API errors
-
-### Error Recovery
-1. **Validation First**: Validate inputs before processing
-2. **Graceful Degradation**: Continue with available components when possible
-3. **Cleanup**: Proper cleanup of temporary files on failure
-4. **Logging**: Detailed logging for debugging
-
-## Concurrency Patterns
-
-### Async Processing
-- **FastAPI Async Endpoints**: Non-blocking HTTP handlers
-- **Background Tasks**: Long-running operations in background
-- **Job Tracking**: In-memory job status tracking
-
-### Sequential vs Parallel
-- **Sequential**: Within a single video (background clips, subtitle generation)
-- **Parallel**: Multiple videos can be processed concurrently via API
-
-## State Management Patterns
-
-### Stateless Components
-Most components are stateless - they process input and produce output without maintaining internal state.
-
-### Cached State
-- **Background Metadata**: Video metadata cached to avoid repeated ffprobe calls
-- **Job Tracking**: In-memory job status (in production would use Redis/database)
-
-### Temporary State
-- **Temporary Files**: Created during processing, cleaned up automatically
-- **Intermediate Results**: Passed between components via data classes
-
-## Testing Patterns
-
-### Unit Testing
-Each component has corresponding test file:
-- `test_video_composer.py`
-- `test_background_manager.py`
-- `test_reddit_client.py`
-
-### Mock Patterns
-- **File Operations**: Mock filesystem for testing
-- **External APIs**: Mock HTTP responses
-- **FFmpeg**: Mock subprocess calls
-
-### Integration Testing
-- **Component Integration**: Test how components work together
-- **API Integration**: Test HTTP endpoints
-- **End-to-End**: Full pipeline with mocked external dependencies
-
-## Performance Patterns
-
-### Optimization Strategies
-1. **Caching**: Metadata caching for background videos
-2. **Lazy Loading**: Load resources only when needed
-3. **Parallel Processing**: Ready for async video processing
-4. **Efficient Encoding**: FFmpeg optimization flags
-
-### Resource Management
-- **Temporary Files**: Automatic cleanup
-- **Memory Management**: Proper handling of large video files
-- **Process Management**: Subprocess timeouts and resource limits
-
-## Extension Patterns
-
-### Adding New TTS Engines
-1. Create new client class following TTS interface
-2. Register in TTS router
-3. Update configuration options
-
-### Adding New Background Themes
-1. Add theme directory with video files
-2. Update `BACKGROUND_THEMES` in settings
-3. BackgroundManager automatically discovers new themes
-
-### Adding New Subtitle Styles
-1. Extend SubtitleGenerator class
-2. Add new style configuration
-3. Integrate with VideoComposer
-
-## Security Patterns
-
-### Input Validation
-- **File Uploads**: Validate file types and sizes
-- **URL Input**: Validate Reddit URLs
-- **Text Input**: Sanitize user-provided text
-
-### Safe File Operations
-- **Path Sanitization**: Prevent directory traversal
-- **Temporary Files**: Secure temp file creation
-- **File Permissions**: Appropriate file permissions
-
-### API Security
-- **CORS Configuration**: Restrict to trusted origins
-- **Rate Limiting**: Ready for implementation
-- **Input Validation**: Pydantic models for all API inputs
-
-## Deployment Patterns
-
-### Development
-- **Local Server**: Uvicorn with auto-reload
-- **Virtual Environment**: Python venv for dependencies
-- **Environment Variables**: `.env` file for configuration
-
-### Production Ready
-- **Process Manager**: Ready for Gunicorn/Uvicorn deployment
-- **Configuration**: Environment variable based
-- **Logging**: Structured logging with levels
-- **Health Checks**: `/health` endpoint
-
-### Scalability Considerations
-- **Stateless Design**: Horizontal scaling ready
-- **Job Queue**: Architecture supports Celery/Redis
-- **Storage**: Configurable output directories
-
-## Monitoring Patterns
-
-### Logging Strategy
-- **Structured Logging**: JSON format for production
-- **Log Levels**: DEBUG, INFO, WARNING, ERROR
-- **Component Logging**: Separate loggers per component
-
-### Health Monitoring
-- **Health Endpoint**: `/health` for service status
-- **System Info**: `/system-info` for component status
-- **Job Status**: API for tracking processing jobs
-
-### Performance Monitoring
-- **Processing Time**: Log generation times
-- **Resource Usage**: Log memory and CPU usage
-- **Error Rates**: Track failure rates
-
-## Maintenance Patterns
-
-### Code Organization
-- **Modular Structure**: Each component in separate file
-- **Clear Interfaces**: Well-defined function signatures
-- **Documentation**: Docstrings and type hints
-
-### Configuration Management
-- **Version Control**: Settings in version control
-- **Environment Specific**: Different settings per environment
-- **Validation**: Automatic validation on load
-
-### Update Strategy
-- **Backward Compatibility**: Maintain API compatibility
-- **Gradual Rollout**: Feature flags for new features
-- **Rollback Plan**: Quick rollback capability
+## Anti-Patterns to Avoid
+- **Python FFmpeg Rendering**: Do not use Python to concatenate video, overlay text, or render final outputs. 
+- **Seconds-Based Frontend Sync**: Do not send raw seconds to the Remotion frontend for word timings. All timestamps must be strictly pre-calculated as frames in the backend.
+- **Tight Coupling**: The frontend should not know how data is fetched; the backend should not know how UI is animated. They only share the `composition_data.json` contract.

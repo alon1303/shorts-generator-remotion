@@ -1,0 +1,1295 @@
+{
+  "assets": {
+    "audio": "audio.mp3",
+    "title_card": "title_card.png",
+    "background": "background.mp4"
+  },
+  "metadata": {
+    "title": "Aitah for cutting off my son after his mom passed away? (Part 3)",
+    "subreddit": "RedditStories",
+    "fps": 30,
+    "duration_frames": 2402
+  },
+  "words": [
+    {
+      "word": "Aitah",
+      "startFrame": 0,
+      "endFrame": 8
+    },
+    {
+      "word": "for",
+      "startFrame": 10,
+      "endFrame": 13
+    },
+    {
+      "word": "cutting",
+      "startFrame": 14,
+      "endFrame": 22
+    },
+    {
+      "word": "off",
+      "startFrame": 24,
+      "endFrame": 27
+    },
+    {
+      "word": "my",
+      "startFrame": 29,
+      "endFrame": 32
+    },
+    {
+      "word": "son",
+      "startFrame": 35,
+      "endFrame": 41
+    },
+    {
+      "word": "after",
+      "startFrame": 42,
+      "endFrame": 49
+    },
+    {
+      "word": "his",
+      "startFrame": 50,
+      "endFrame": 52
+    },
+    {
+      "word": "mom",
+      "startFrame": 54,
+      "endFrame": 60
+    },
+    {
+      "word": "passed",
+      "startFrame": 62,
+      "endFrame": 71
+    },
+    {
+      "word": "away?",
+      "startFrame": 72,
+      "endFrame": 89
+    },
+    {
+      "word": "Tammy",
+      "startFrame": 104,
+      "endFrame": 115
+    },
+    {
+      "word": "and",
+      "startFrame": 117,
+      "endFrame": 119
+    },
+    {
+      "word": "I",
+      "startFrame": 122,
+      "endFrame": 124
+    },
+    {
+      "word": "had",
+      "startFrame": 128,
+      "endFrame": 132
+    },
+    {
+      "word": "a",
+      "startFrame": 133,
+      "endFrame": 134
+    },
+    {
+      "word": "separate",
+      "startFrame": 136,
+      "endFrame": 147
+    },
+    {
+      "word": "life",
+      "startFrame": 148,
+      "endFrame": 154
+    },
+    {
+      "word": "insurance",
+      "startFrame": 155,
+      "endFrame": 167
+    },
+    {
+      "word": "policy",
+      "startFrame": 168,
+      "endFrame": 181
+    },
+    {
+      "word": "that",
+      "startFrame": 182,
+      "endFrame": 186
+    },
+    {
+      "word": "we",
+      "startFrame": 187,
+      "endFrame": 190
+    },
+    {
+      "word": "set",
+      "startFrame": 191,
+      "endFrame": 198
+    },
+    {
+      "word": "up.",
+      "startFrame": 199,
+      "endFrame": 209
+    },
+    {
+      "word": "It",
+      "startFrame": 222,
+      "endFrame": 226
+    },
+    {
+      "word": "was",
+      "startFrame": 227,
+      "endFrame": 229
+    },
+    {
+      "word": "more",
+      "startFrame": 231,
+      "endFrame": 235
+    },
+    {
+      "word": "substantial",
+      "startFrame": 236,
+      "endFrame": 256
+    },
+    {
+      "word": "than",
+      "startFrame": 258,
+      "endFrame": 261
+    },
+    {
+      "word": "the",
+      "startFrame": 262,
+      "endFrame": 264
+    },
+    {
+      "word": "other",
+      "startFrame": 266,
+      "endFrame": 271
+    },
+    {
+      "word": "one.",
+      "startFrame": 273,
+      "endFrame": 283
+    },
+    {
+      "word": "We",
+      "startFrame": 297,
+      "endFrame": 300
+    },
+    {
+      "word": "originally",
+      "startFrame": 302,
+      "endFrame": 316
+    },
+    {
+      "word": "set",
+      "startFrame": 318,
+      "endFrame": 323
+    },
+    {
+      "word": "them",
+      "startFrame": 324,
+      "endFrame": 328
+    },
+    {
+      "word": "up",
+      "startFrame": 329,
+      "endFrame": 332
+    },
+    {
+      "word": "in",
+      "startFrame": 334,
+      "endFrame": 336
+    },
+    {
+      "word": "case",
+      "startFrame": 337,
+      "endFrame": 344
+    },
+    {
+      "word": "anything",
+      "startFrame": 345,
+      "endFrame": 354
+    },
+    {
+      "word": "happened",
+      "startFrame": 356,
+      "endFrame": 366
+    },
+    {
+      "word": "to",
+      "startFrame": 366,
+      "endFrame": 368
+    },
+    {
+      "word": "us",
+      "startFrame": 372,
+      "endFrame": 377
+    },
+    {
+      "word": "the",
+      "startFrame": 383,
+      "endFrame": 387
+    },
+    {
+      "word": "other",
+      "startFrame": 389,
+      "endFrame": 394
+    },
+    {
+      "word": "could",
+      "startFrame": 396,
+      "endFrame": 400
+    },
+    {
+      "word": "have",
+      "startFrame": 401,
+      "endFrame": 406
+    },
+    {
+      "word": "money",
+      "startFrame": 408,
+      "endFrame": 415
+    },
+    {
+      "word": "to",
+      "startFrame": 417,
+      "endFrame": 420
+    },
+    {
+      "word": "live",
+      "startFrame": 422,
+      "endFrame": 431
+    },
+    {
+      "word": "and",
+      "startFrame": 433,
+      "endFrame": 436
+    },
+    {
+      "word": "take",
+      "startFrame": 438,
+      "endFrame": 444
+    },
+    {
+      "word": "care",
+      "startFrame": 445,
+      "endFrame": 451
+    },
+    {
+      "word": "of",
+      "startFrame": 452,
+      "endFrame": 453
+    },
+    {
+      "word": "Mark.",
+      "startFrame": 455,
+      "endFrame": 470
+    },
+    {
+      "word": "I",
+      "startFrame": 485,
+      "endFrame": 487
+    },
+    {
+      "word": "was",
+      "startFrame": 490,
+      "endFrame": 493
+    },
+    {
+      "word": "the",
+      "startFrame": 494,
+      "endFrame": 496
+    },
+    {
+      "word": "beneficiary",
+      "startFrame": 498,
+      "endFrame": 521
+    },
+    {
+      "word": "since",
+      "startFrame": 522,
+      "endFrame": 528
+    },
+    {
+      "word": "I",
+      "startFrame": 529,
+      "endFrame": 530
+    },
+    {
+      "word": "was",
+      "startFrame": 532,
+      "endFrame": 535
+    },
+    {
+      "word": "paying",
+      "startFrame": 537,
+      "endFrame": 546
+    },
+    {
+      "word": "for",
+      "startFrame": 548,
+      "endFrame": 554
+    },
+    {
+      "word": "it.",
+      "startFrame": 556,
+      "endFrame": 565
+    },
+    {
+      "word": "Now",
+      "startFrame": 590,
+      "endFrame": 594
+    },
+    {
+      "word": "that",
+      "startFrame": 595,
+      "endFrame": 599
+    },
+    {
+      "word": "his",
+      "startFrame": 600,
+      "endFrame": 603
+    },
+    {
+      "word": "mom",
+      "startFrame": 605,
+      "endFrame": 611
+    },
+    {
+      "word": "is",
+      "startFrame": 614,
+      "endFrame": 616
+    },
+    {
+      "word": "gone",
+      "startFrame": 617,
+      "endFrame": 625
+    },
+    {
+      "word": "and",
+      "startFrame": 625,
+      "endFrame": 627
+    },
+    {
+      "word": "not",
+      "startFrame": 629,
+      "endFrame": 633
+    },
+    {
+      "word": "helping",
+      "startFrame": 635,
+      "endFrame": 643
+    },
+    {
+      "word": "pay",
+      "startFrame": 644,
+      "endFrame": 649
+    },
+    {
+      "word": "his",
+      "startFrame": 650,
+      "endFrame": 653
+    },
+    {
+      "word": "bills",
+      "startFrame": 655,
+      "endFrame": 669
+    },
+    {
+      "word": "Mark",
+      "startFrame": 678,
+      "endFrame": 686
+    },
+    {
+      "word": "is",
+      "startFrame": 687,
+      "endFrame": 690
+    },
+    {
+      "word": "calling",
+      "startFrame": 691,
+      "endFrame": 700
+    },
+    {
+      "word": "me",
+      "startFrame": 702,
+      "endFrame": 704
+    },
+    {
+      "word": "for",
+      "startFrame": 706,
+      "endFrame": 709
+    },
+    {
+      "word": "help.",
+      "startFrame": 711,
+      "endFrame": 725
+    },
+    {
+      "word": "I",
+      "startFrame": 733,
+      "endFrame": 734
+    },
+    {
+      "word": "said",
+      "startFrame": 737,
+      "endFrame": 743
+    },
+    {
+      "word": "no.",
+      "startFrame": 745,
+      "endFrame": 758
+    },
+    {
+      "word": "I",
+      "startFrame": 771,
+      "endFrame": 772
+    },
+    {
+      "word": "said",
+      "startFrame": 775,
+      "endFrame": 780
+    },
+    {
+      "word": "he",
+      "startFrame": 781,
+      "endFrame": 783
+    },
+    {
+      "word": "had",
+      "startFrame": 785,
+      "endFrame": 789
+    },
+    {
+      "word": "the",
+      "startFrame": 790,
+      "endFrame": 792
+    },
+    {
+      "word": "money",
+      "startFrame": 793,
+      "endFrame": 799
+    },
+    {
+      "word": "from",
+      "startFrame": 801,
+      "endFrame": 805
+    },
+    {
+      "word": "his",
+      "startFrame": 806,
+      "endFrame": 809
+    },
+    {
+      "word": "mom's",
+      "startFrame": 810,
+      "endFrame": 819
+    },
+    {
+      "word": "life",
+      "startFrame": 820,
+      "endFrame": 827
+    },
+    {
+      "word": "insurance.",
+      "startFrame": 828,
+      "endFrame": 848
+    },
+    {
+      "word": "Everything",
+      "startFrame": 853,
+      "endFrame": 866
+    },
+    {
+      "word": "else",
+      "startFrame": 869,
+      "endFrame": 876
+    },
+    {
+      "word": "is",
+      "startFrame": 877,
+      "endFrame": 880
+    },
+    {
+      "word": "quite",
+      "startFrame": 882,
+      "endFrame": 892
+    },
+    {
+      "word": "literally",
+      "startFrame": 895,
+      "endFrame": 909
+    },
+    {
+      "word": "mine.",
+      "startFrame": 911,
+      "endFrame": 930
+    },
+    {
+      "word": "Even",
+      "startFrame": 940,
+      "endFrame": 947
+    },
+    {
+      "word": "the",
+      "startFrame": 948,
+      "endFrame": 950
+    },
+    {
+      "word": "car",
+      "startFrame": 952,
+      "endFrame": 959
+    },
+    {
+      "word": "she",
+      "startFrame": 962,
+      "endFrame": 965
+    },
+    {
+      "word": "drove",
+      "startFrame": 967,
+      "endFrame": 979
+    },
+    {
+      "word": "was",
+      "startFrame": 981,
+      "endFrame": 984
+    },
+    {
+      "word": "leased",
+      "startFrame": 987,
+      "endFrame": 994
+    },
+    {
+      "word": "by",
+      "startFrame": 996,
+      "endFrame": 1001
+    },
+    {
+      "word": "me.",
+      "startFrame": 1003,
+      "endFrame": 1017
+    },
+    {
+      "word": "He",
+      "startFrame": 1032,
+      "endFrame": 1036
+    },
+    {
+      "word": "is",
+      "startFrame": 1038,
+      "endFrame": 1041
+    },
+    {
+      "word": "upset",
+      "startFrame": 1043,
+      "endFrame": 1054
+    },
+    {
+      "word": "with",
+      "startFrame": 1055,
+      "endFrame": 1060
+    },
+    {
+      "word": "me",
+      "startFrame": 1062,
+      "endFrame": 1067
+    },
+    {
+      "word": "and",
+      "startFrame": 1069,
+      "endFrame": 1072
+    },
+    {
+      "word": "said",
+      "startFrame": 1074,
+      "endFrame": 1080
+    },
+    {
+      "word": "that",
+      "startFrame": 1081,
+      "endFrame": 1084
+    },
+    {
+      "word": "I",
+      "startFrame": 1086,
+      "endFrame": 1087
+    },
+    {
+      "word": "obviously",
+      "startFrame": 1089,
+      "endFrame": 1104
+    },
+    {
+      "word": "had",
+      "startFrame": 1106,
+      "endFrame": 1108
+    },
+    {
+      "word": "never",
+      "startFrame": 1110,
+      "endFrame": 1116
+    },
+    {
+      "word": "thought",
+      "startFrame": 1117,
+      "endFrame": 1124
+    },
+    {
+      "word": "of",
+      "startFrame": 1125,
+      "endFrame": 1127
+    },
+    {
+      "word": "him",
+      "startFrame": 1128,
+      "endFrame": 1131
+    },
+    {
+      "word": "as",
+      "startFrame": 1133,
+      "endFrame": 1136
+    },
+    {
+      "word": "a",
+      "startFrame": 1138,
+      "endFrame": 1139
+    },
+    {
+      "word": "son",
+      "startFrame": 1142,
+      "endFrame": 1152
+    },
+    {
+      "word": "if",
+      "startFrame": 1153,
+      "endFrame": 1156
+    },
+    {
+      "word": "I",
+      "startFrame": 1158,
+      "endFrame": 1159
+    },
+    {
+      "word": "was",
+      "startFrame": 1161,
+      "endFrame": 1164
+    },
+    {
+      "word": "willing",
+      "startFrame": 1166,
+      "endFrame": 1174
+    },
+    {
+      "word": "to",
+      "startFrame": 1175,
+      "endFrame": 1177
+    },
+    {
+      "word": "do",
+      "startFrame": 1179,
+      "endFrame": 1182
+    },
+    {
+      "word": "this.",
+      "startFrame": 1185,
+      "endFrame": 1201
+    },
+    {
+      "word": "I",
+      "startFrame": 1214,
+      "endFrame": 1215
+    },
+    {
+      "word": "told",
+      "startFrame": 1219,
+      "endFrame": 1225
+    },
+    {
+      "word": "him",
+      "startFrame": 1226,
+      "endFrame": 1229
+    },
+    {
+      "word": "to",
+      "startFrame": 1230,
+      "endFrame": 1231
+    },
+    {
+      "word": "ask",
+      "startFrame": 1234,
+      "endFrame": 1241
+    },
+    {
+      "word": "his",
+      "startFrame": 1243,
+      "endFrame": 1246
+    },
+    {
+      "word": "biodad",
+      "startFrame": 1248,
+      "endFrame": 1269
+    },
+    {
+      "word": "for",
+      "startFrame": 1271,
+      "endFrame": 1275
+    },
+    {
+      "word": "help",
+      "startFrame": 1277,
+      "endFrame": 1284
+    },
+    {
+      "word": "since",
+      "startFrame": 1288,
+      "endFrame": 1297
+    },
+    {
+      "word": "that's",
+      "startFrame": 1298,
+      "endFrame": 1305
+    },
+    {
+      "word": "who",
+      "startFrame": 1306,
+      "endFrame": 1309
+    },
+    {
+      "word": "he",
+      "startFrame": 1311,
+      "endFrame": 1313
+    },
+    {
+      "word": "wanted",
+      "startFrame": 1315,
+      "endFrame": 1326
+    },
+    {
+      "word": "in",
+      "startFrame": 1327,
+      "endFrame": 1329
+    },
+    {
+      "word": "his",
+      "startFrame": 1331,
+      "endFrame": 1334
+    },
+    {
+      "word": "life.",
+      "startFrame": 1336,
+      "endFrame": 1353
+    },
+    {
+      "word": "His",
+      "startFrame": 1369,
+      "endFrame": 1374
+    },
+    {
+      "word": "wife,",
+      "startFrame": 1376,
+      "endFrame": 1385
+    },
+    {
+      "word": "Sarah,",
+      "startFrame": 1386,
+      "endFrame": 1406
+    },
+    {
+      "word": "the",
+      "startFrame": 1412,
+      "endFrame": 1414
+    },
+    {
+      "word": "girl",
+      "startFrame": 1416,
+      "endFrame": 1422
+    },
+    {
+      "word": "from",
+      "startFrame": 1424,
+      "endFrame": 1428
+    },
+    {
+      "word": "university",
+      "startFrame": 1431,
+      "endFrame": 1449
+    },
+    {
+      "word": "called",
+      "startFrame": 1452,
+      "endFrame": 1460
+    },
+    {
+      "word": "me",
+      "startFrame": 1462,
+      "endFrame": 1469
+    },
+    {
+      "word": "and",
+      "startFrame": 1477,
+      "endFrame": 1485
+    },
+    {
+      "word": "said",
+      "startFrame": 1486,
+      "endFrame": 1492
+    },
+    {
+      "word": "that",
+      "startFrame": 1493,
+      "endFrame": 1498
+    },
+    {
+      "word": "I",
+      "startFrame": 1499,
+      "endFrame": 1501
+    },
+    {
+      "word": "would",
+      "startFrame": 1503,
+      "endFrame": 1508
+    },
+    {
+      "word": "be",
+      "startFrame": 1509,
+      "endFrame": 1513
+    },
+    {
+      "word": "cut",
+      "startFrame": 1515,
+      "endFrame": 1521
+    },
+    {
+      "word": "out",
+      "startFrame": 1522,
+      "endFrame": 1525
+    },
+    {
+      "word": "of",
+      "startFrame": 1526,
+      "endFrame": 1528
+    },
+    {
+      "word": "their",
+      "startFrame": 1529,
+      "endFrame": 1534
+    },
+    {
+      "word": "lives",
+      "startFrame": 1536,
+      "endFrame": 1553
+    },
+    {
+      "word": "and",
+      "startFrame": 1560,
+      "endFrame": 1566
+    },
+    {
+      "word": "that",
+      "startFrame": 1567,
+      "endFrame": 1571
+    },
+    {
+      "word": "I",
+      "startFrame": 1572,
+      "endFrame": 1573
+    },
+    {
+      "word": "would",
+      "startFrame": 1575,
+      "endFrame": 1580
+    },
+    {
+      "word": "never",
+      "startFrame": 1583,
+      "endFrame": 1589
+    },
+    {
+      "word": "see",
+      "startFrame": 1591,
+      "endFrame": 1596
+    },
+    {
+      "word": "my",
+      "startFrame": 1598,
+      "endFrame": 1601
+    },
+    {
+      "word": "grandchildren.",
+      "startFrame": 1603,
+      "endFrame": 1633
+    },
+    {
+      "word": "They",
+      "startFrame": 1652,
+      "endFrame": 1656
+    },
+    {
+      "word": "don't",
+      "startFrame": 1657,
+      "endFrame": 1663
+    },
+    {
+      "word": "have",
+      "startFrame": 1664,
+      "endFrame": 1669
+    },
+    {
+      "word": "kids",
+      "startFrame": 1670,
+      "endFrame": 1679
+    },
+    {
+      "word": "yet",
+      "startFrame": 1681,
+      "endFrame": 1690
+    },
+    {
+      "word": "but",
+      "startFrame": 1705,
+      "endFrame": 1711
+    },
+    {
+      "word": "I",
+      "startFrame": 1713,
+      "endFrame": 1713
+    },
+    {
+      "word": "suppose",
+      "startFrame": 1716,
+      "endFrame": 1729
+    },
+    {
+      "word": "they",
+      "startFrame": 1730,
+      "endFrame": 1734
+    },
+    {
+      "word": "are",
+      "startFrame": 1735,
+      "endFrame": 1738
+    },
+    {
+      "word": "planning",
+      "startFrame": 1739,
+      "endFrame": 1750
+    },
+    {
+      "word": "on",
+      "startFrame": 1752,
+      "endFrame": 1755
+    },
+    {
+      "word": "a",
+      "startFrame": 1756,
+      "endFrame": 1757
+    },
+    {
+      "word": "family.",
+      "startFrame": 1759,
+      "endFrame": 1782
+    },
+    {
+      "word": "I",
+      "startFrame": 1795,
+      "endFrame": 1797
+    },
+    {
+      "word": "told",
+      "startFrame": 1801,
+      "endFrame": 1808
+    },
+    {
+      "word": "her",
+      "startFrame": 1809,
+      "endFrame": 1812
+    },
+    {
+      "word": "that",
+      "startFrame": 1813,
+      "endFrame": 1816
+    },
+    {
+      "word": "I",
+      "startFrame": 1818,
+      "endFrame": 1819
+    },
+    {
+      "word": "was",
+      "startFrame": 1821,
+      "endFrame": 1825
+    },
+    {
+      "word": "okay",
+      "startFrame": 1827,
+      "endFrame": 1836
+    },
+    {
+      "word": "with",
+      "startFrame": 1838,
+      "endFrame": 1842
+    },
+    {
+      "word": "that.",
+      "startFrame": 1843,
+      "endFrame": 1857
+    },
+    {
+      "word": "And",
+      "startFrame": 1867,
+      "endFrame": 1872
+    },
+    {
+      "word": "I",
+      "startFrame": 1875,
+      "endFrame": 1875
+    },
+    {
+      "word": "am.",
+      "startFrame": 1879,
+      "endFrame": 1895
+    },
+    {
+      "word": "I",
+      "startFrame": 1913,
+      "endFrame": 1914
+    },
+    {
+      "word": "miss",
+      "startFrame": 1918,
+      "endFrame": 1924
+    },
+    {
+      "word": "Tammy",
+      "startFrame": 1925,
+      "endFrame": 1936
+    },
+    {
+      "word": "but",
+      "startFrame": 1938,
+      "endFrame": 1942
+    },
+    {
+      "word": "I'm",
+      "startFrame": 1943,
+      "endFrame": 1946
+    },
+    {
+      "word": "okay.",
+      "startFrame": 1949,
+      "endFrame": 1970
+    },
+    {
+      "word": "I",
+      "startFrame": 1977,
+      "endFrame": 1979
+    },
+    {
+      "word": "have",
+      "startFrame": 1981,
+      "endFrame": 1986
+    },
+    {
+      "word": "my",
+      "startFrame": 1987,
+      "endFrame": 1990
+    },
+    {
+      "word": "dogs",
+      "startFrame": 1992,
+      "endFrame": 2007
+    },
+    {
+      "word": "and",
+      "startFrame": 2008,
+      "endFrame": 2010
+    },
+    {
+      "word": "my",
+      "startFrame": 2012,
+      "endFrame": 2015
+    },
+    {
+      "word": "job.",
+      "startFrame": 2017,
+      "endFrame": 2035
+    },
+    {
+      "word": "I",
+      "startFrame": 2048,
+      "endFrame": 2050
+    },
+    {
+      "word": "see",
+      "startFrame": 2052,
+      "endFrame": 2057
+    },
+    {
+      "word": "my",
+      "startFrame": 2058,
+      "endFrame": 2061
+    },
+    {
+      "word": "sisters",
+      "startFrame": 2064,
+      "endFrame": 2079
+    },
+    {
+      "word": "and",
+      "startFrame": 2080,
+      "endFrame": 2083
+    },
+    {
+      "word": "their",
+      "startFrame": 2084,
+      "endFrame": 2089
+    },
+    {
+      "word": "kids",
+      "startFrame": 2091,
+      "endFrame": 2102
+    },
+    {
+      "word": "and",
+      "startFrame": 2103,
+      "endFrame": 2106
+    },
+    {
+      "word": "grandkids.",
+      "startFrame": 2108,
+      "endFrame": 2140
+    },
+    {
+      "word": "I'm",
+      "startFrame": 2151,
+      "endFrame": 2156
+    },
+    {
+      "word": "involved",
+      "startFrame": 2158,
+      "endFrame": 2170
+    },
+    {
+      "word": "in",
+      "startFrame": 2171,
+      "endFrame": 2173
+    },
+    {
+      "word": "their",
+      "startFrame": 2174,
+      "endFrame": 2179
+    },
+    {
+      "word": "lives.",
+      "startFrame": 2181,
+      "endFrame": 2202
+    },
+    {
+      "word": "So",
+      "startFrame": 2217,
+      "endFrame": 2222
+    },
+    {
+      "word": "am",
+      "startFrame": 2224,
+      "endFrame": 2227
+    },
+    {
+      "word": "I",
+      "startFrame": 2230,
+      "endFrame": 2230
+    },
+    {
+      "word": "the",
+      "startFrame": 2234,
+      "endFrame": 2236
+    },
+    {
+      "word": "asshole",
+      "startFrame": 2239,
+      "endFrame": 2256
+    },
+    {
+      "word": "for",
+      "startFrame": 2258,
+      "endFrame": 2262
+    },
+    {
+      "word": "cutting",
+      "startFrame": 2263,
+      "endFrame": 2271
+    },
+    {
+      "word": "off",
+      "startFrame": 2273,
+      "endFrame": 2277
+    },
+    {
+      "word": "financial",
+      "startFrame": 2279,
+      "endFrame": 2293
+    },
+    {
+      "word": "support",
+      "startFrame": 2295,
+      "endFrame": 2308
+    },
+    {
+      "word": "to",
+      "startFrame": 2309,
+      "endFrame": 2312
+    },
+    {
+      "word": "a",
+      "startFrame": 2314,
+      "endFrame": 2315
+    },
+    {
+      "word": "full",
+      "startFrame": 2317,
+      "endFrame": 2323
+    },
+    {
+      "word": "grown",
+      "startFrame": 2325,
+      "endFrame": 2333
+    },
+    {
+      "word": "man",
+      "startFrame": 2335,
+      "endFrame": 2343
+    },
+    {
+      "word": "with",
+      "startFrame": 2345,
+      "endFrame": 2349
+    },
+    {
+      "word": "a",
+      "startFrame": 2351,
+      "endFrame": 2352
+    },
+    {
+      "word": "job",
+      "startFrame": 2354,
+      "endFrame": 2363
+    },
+    {
+      "word": "and",
+      "startFrame": 2364,
+      "endFrame": 2367
+    },
+    {
+      "word": "a",
+      "startFrame": 2368,
+      "endFrame": 2369
+    },
+    {
+      "word": "wife?",
+      "startFrame": 2371,
+      "endFrame": 2402
+    }
+  ]
+}

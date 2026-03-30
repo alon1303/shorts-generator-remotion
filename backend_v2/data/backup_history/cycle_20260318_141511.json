@@ -1,0 +1,23 @@
+{
+  "cycle_start": "2026-03-18T14:11:11.387825",
+  "stories_fetched": 2,
+  "stories_processed": 2,
+  "stories_successful": 1,
+  "stories_failed": 0,
+  "youtube_uploads": 0,
+  "youtube_successful": 0,
+  "youtube_failed": 0,
+  "errors": [],
+  "processed_stories": [
+    {
+      "id": "1rwidxt",
+      "title": "My Family Had Better Things to Do Than To Make Sure I Didn't Die, So I'm Not Going to be Their \"Safety Net\" Anymore",
+      "subreddit": "TrueOffMyChest",
+      "url": "https://reddit.com/r/TrueOffMyChest/comments/1rwidxt/my_family_had_better_things_to_do_than_to_make/",
+      "success": true,
+      "timestamp": "2026-03-18T14:15:02.895952"
+    }
+  ],
+  "cycle_duration": 239.868279,
+  "cycle_end": "2026-03-18T14:15:11.256104"
+}
