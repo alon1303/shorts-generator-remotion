@@ -2,7 +2,7 @@ import { Sequence, useVideoConfig, spring, useCurrentFrame, interpolate } from "
 import React from "react";
 import { TitleCardData } from "./types";
 
-export const TitleCard: React.FC<{ data: TitleCardData }> = ({ data }) => {
+export const TitleCard: React.FC<{ data: TitleCardData; duration: number }> = ({ data, duration }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -17,14 +17,6 @@ export const TitleCard: React.FC<{ data: TitleCardData }> = ({ data }) => {
     },
     durationInFrames: 18,
   });
-
-  // Calculate when the title card should start exiting
-  // In the backend, we typically end the title card after the title is spoken + buffer.
-  // For now, let's assume it matches the words that are in titleCardData.titleText.
-  // A safer approach for now is a fixed duration or until a certain frame if provided.
-  // Looking at the composition_data.json from earlier, the first 10 words (the title) end at frame 147.
-  // Let's use a duration that covers the title.
-  const duration = 180; // ~6 seconds default
 
   // Exit animation (starts at duration - 24 frames = 0.8s before end)
   const exit = spring({

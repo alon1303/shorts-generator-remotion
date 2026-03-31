@@ -5,6 +5,7 @@ import shutil
 import math
 import json
 import logging
+import random
 from pathlib import Path
 from reddit_story.reddit_client import RedditClient
 from reddit_story.story_processor import StoryProcessor
@@ -17,6 +18,77 @@ import subprocess
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
+def get_background_clips(total_duration_frames: int, output_dir: Path) -> list:
+    """
+    Builds the backgrounds array and prepares the files in output_dir.
+    Renames clips sequentially to bg_0.mp4, bg_1.mp4, etc.
+    """
+    # Base backgrounds directory
+    bg_base_dir = Path("../backend_v2/assets/backgrounds")
+    if not bg_base_dir.exists():
+        bg_base_dir = Path("assets/backgrounds")
+    
+    # Recursively find all mp4 files in all subdirectories
+    available_bgs = list(bg_base_dir.rglob("*.mp4")) if bg_base_dir.exists() else []
+    
+    if available_bgs:
+        logger.info(f"Found {len(available_bgs)} background videos in {bg_base_dir}")
+    else:
+        logger.warning(f"No background videos found in {bg_base_dir}")
+
+    backgrounds_data = []
+    current_frame = 0
+    bg_index = 0
+    
+    # Create backgrounds subdirectory in output_dir
+    output_bg_dir = output_dir / "backgrounds"
+    output_bg_dir.mkdir(parents=True, exist_ok=True)
+
+    # Fallback bg if no bgs available
+    fallback_bg = Path("../backend_v2/production_preview.mp4")
+
+    while current_frame < total_duration_frames:
+        if not available_bgs:
+            # Use real fallback if no bgs available
+            dummy_name = f"bg_{bg_index}.mp4"
+            if fallback_bg.exists():
+                shutil.copy2(fallback_bg, output_bg_dir / dummy_name)
+            else:
+                # If even fallback is missing, we must fail or find something.
+                # Writing a 1-second black mp4 with ffmpeg would be safer, but let's assume production_preview exists.
+                logger.error("No background videos found and no production_preview.mp4 fallback!")
+                # Last resort: copy ANY mp4 in the project if one exists, else this will crash remotion
+            
+            duration_frames = total_duration_frames - current_frame
+            backgrounds_data.append({
+                "startFrame": current_frame,
+                "endFrame": total_duration_frames,
+                "backgroundPath": f"backgrounds/{dummy_name}"
+            })
+            break
+
+        selected_bg = random.choice(available_bgs)
+        # 10 to 15 seconds in frames (30 FPS)
+        duration_frames = random.randint(300, 450)
+        
+        # Don't overshoot total duration
+        if current_frame + duration_frames > total_duration_frames:
+            duration_frames = total_duration_frames - current_frame
+            
+        new_name = f"bg_{bg_index}.mp4"
+        shutil.copy2(selected_bg, output_bg_dir / new_name)
+        
+        backgrounds_data.append({
+            "startFrame": current_frame,
+            "endFrame": current_frame + duration_frames,
+            "backgroundPath": f"backgrounds/{new_name}"
+        })
+        
+        current_frame += duration_frames
+        bg_index += 1
+        
+    return backgrounds_data
+
 def render_video(output_dir: Path):
     logger.info("Starting Remotion rendering process...")
     frontend_dir = Path(__file__).parent.parent / "remotion-frontend"
@@ -27,13 +99,24 @@ def render_video(output_dir: Path):
         shutil.rmtree(handoff_dir)
     handoff_dir.mkdir(parents=True, exist_ok=True)
     
-    # 2. Copy assets
-    for file_name in ["audio.mp3", "background.mp4", "composition_data.json"]:
+    # 2. Copy core assets
+    assets_to_copy = ["audio.mp3", "composition_data.json", "lofi_bg.mp3"]
+    for file_name in assets_to_copy:
         src_file = output_dir / file_name
         if src_file.exists():
             shutil.copy2(src_file, handoff_dir / file_name)
+        elif file_name == "lofi_bg.mp3":
+            # Try to find lofi_bg in backend assets if not in output_dir
+            backend_assets = Path("assets") / "audio" / "lofi_bg.mp3"
+            if backend_assets.exists():
+                shutil.copy2(backend_assets, handoff_dir / "lofi_bg.mp3")
+
+    # 3. Copy backgrounds folder
+    src_bg_dir = output_dir / "backgrounds"
+    if src_bg_dir.exists():
+        shutil.copytree(src_bg_dir, handoff_dir / "backgrounds")
             
-    # 3. Set up command
+    # 4. Set up command
     out_file = frontend_dir / "out" / "final_video.mp4"
     if out_file.exists():
         out_file.unlink()
@@ -43,7 +126,7 @@ def render_video(output_dir: Path):
     
     logger.info(f"Executing: {' '.join(cmd)} inside {frontend_dir.resolve()}")
     
-    # 4. Execute Remotion
+    # 5. Execute Remotion
     process = subprocess.Popen(
         cmd,
         cwd=str(frontend_dir.resolve()),
@@ -63,7 +146,7 @@ def render_video(output_dir: Path):
         logger.error("Remotion rendering failed.")
         sys.exit(1)
         
-    # 5. Move back to output dir
+    # 6. Move back to output dir
     final_dest = output_dir / "final_video.mp4"
     if out_file.exists():
         shutil.move(str(out_file), str(final_dest))
@@ -134,6 +217,7 @@ async def run_cached_export_pipeline(config: dict):
         # Merge Timestamps
         # Determine title duration by looking at the last word's end time, plus a small buffer
         title_duration = title_words[-1]["end"] + 0.5 if title_words else 0.0
+        title_duration_frames = math.floor(title_duration * 30)
         
         merged_words = []
         for w in title_words:
@@ -154,28 +238,21 @@ async def run_cached_export_pipeline(config: dict):
         total_duration_seconds = part_words[-1]["end"] + title_duration if part_words else title_duration
         total_duration_frames = math.floor(total_duration_seconds * 30)
         
-        # Select Background
-        background_dest = output_dir / "background.mp4"
-        original_bg_dir = Path("../backend_v2/assets/backgrounds/minecraft")
-        real_bgs = list(original_bg_dir.glob("*.mp4")) if original_bg_dir.exists() else []
-        fallback_bg = Path("../backend_v2/production_preview.mp4")
-        if real_bgs:
-            shutil.copy2(real_bgs[0], background_dest)
-        elif fallback_bg.exists():
-            shutil.copy2(fallback_bg, background_dest)
-        else:
-            with open(background_dest, "w") as f:
-                f.write("dummy background video content")
+        # 3. Dynamic Background Selection
+        backgrounds_data = get_background_clips(total_duration_frames, output_dir)
                 
-        # Create composition_data.json
+        # 4. Create composition_data.json
         composition_data = {
             "assets": {
                 "audio": "audio.mp3",
-                "background": "background.mp4"
+                "bg_music": "lofi_bg.mp3"
             },
             "metadata": {
+                "title": title_text,
+                "subreddit": "r/RedditStories",
                 "fps": 30,
-                "duration_frames": total_duration_frames
+                "duration_frames": total_duration_frames,
+                "titleDurationFrames": title_duration_frames
             },
             "titleCardData": {
                 "titleText": title_card_text,
@@ -184,6 +261,7 @@ async def run_cached_export_pipeline(config: dict):
                 "upvotes": "15K",
                 "keywords": keywords
             },
+            "backgrounds": backgrounds_data,
             "words": merged_words
         }
         
@@ -223,55 +301,18 @@ async def run_export_pipeline(url: str):
     
     # 4. Generate TTS
     print("Generating TTS...")
-    # For simplicity, we just generate the title and first part
     title = processed_story.story.title
     story_chunks = [processed_story.parts[0].text] if processed_story.parts else ["This is a test story body."]
     
-    title_audio_path, story_audio_chunks, story_start_time, timing_data = await generate_title_and_story_audio(
-        title=title,
-        story_text_chunks=story_chunks,
-        voice="en-US-ChristopherNeural",
-        engine="edge"
-    )
+    # We need keywords for the title
+    keywords = await processor._extract_power_words_single(title)
     
-    # 5. Generate Title Card (Skipped - now handled by Remotion)
-    print("Skipping static Title Card generation (handled by Frontend)...")
-    
-    # 6. Select Background (Mocking this by finding any mp4 or creating a dummy file)
-    print("Selecting background...")
-    background_dest = output_dir / "background.mp4"
-    # Try to find a real background in the original backend_v2 assets
-    original_bg_dir = Path("../backend_v2/assets/backgrounds/minecraft")
-    real_bgs = list(original_bg_dir.glob("*.mp4")) if original_bg_dir.exists() else []
-    fallback_bg = Path("../backend_v2/production_preview.mp4")
-    if real_bgs:
-        shutil.copy2(real_bgs[0], background_dest)
-    elif fallback_bg.exists():
-        shutil.copy2(fallback_bg, background_dest)
-    else:
-        # Create a dummy file if no real background is found
-        with open(background_dest, "w") as f:
-            f.write("dummy background video content")
-            
-    # Copy audio files to output dir
-    final_title_audio = output_dir / "title_audio.mp3"
-    final_story_audio = output_dir / "story_audio.mp3"
-    shutil.copy2(title_audio_path, final_title_audio)
-    shutil.copy2(story_audio_chunks[0].audio_path, final_story_audio)
-    
-    # 7. Generate Data Contract (composition_data.json)
-    print("Generating Data Contract...")
-    FPS = 30
-    
-    # Convert timestamps to frames
-    words_data = []
-    
-    # We need to fetch the raw title timestamps from the tts_router again or just re-generate them, 
-    # but since tts_router combined them into story_audio_chunks in our previous step (wait, did it?),
-    # Let's just generate TTS for the whole text to make it one simple list of words.
-    
-    # Actually, let's use a simpler approach to get a clean list of words.
     router = await get_tts_client(engine="edge")
+    
+    # Title only for duration
+    title_audio, title_dur, title_words = await router.text_to_speech_with_timestamps(text=title, voice="en-US-ChristopherNeural")
+    title_duration_frames = math.floor((title_dur + 0.5) * 30) # 0.5s buffer
+    
     full_text = f"{title}. {story_chunks[0]}"
     audio_path, duration, word_timestamps = await router.text_to_speech_with_timestamps(text=full_text, voice="en-US-ChristopherNeural")
     
@@ -279,6 +320,8 @@ async def run_export_pipeline(url: str):
     final_audio = output_dir / "audio.mp3"
     shutil.copy2(audio_path, final_audio)
     
+    FPS = 30
+    words_data = []
     if word_timestamps:
         for ts in word_timestamps:
             words_data.append({
@@ -287,23 +330,34 @@ async def run_export_pipeline(url: str):
                 "endFrame": math.floor(ts.end * FPS)
             })
             
+    total_duration_frames = math.floor(duration * FPS)
+    
+    # 5. Dynamic Background Selection
+    backgrounds_data = get_background_clips(total_duration_frames, output_dir)
+            
+    # 6. Generate Data Contract (composition_data.json)
+    print("Generating Data Contract...")
+    
     composition_data = {
         "assets": {
             "audio": "audio.mp3",
-            "background": "background.mp4"
+            "bg_music": "lofi_bg.mp3"
         },
         "metadata": {
             "title": story.title,
             "subreddit": story.subreddit,
             "fps": FPS,
-            "duration_frames": math.floor(duration * FPS)
+            "duration_frames": total_duration_frames,
+            "titleDurationFrames": title_duration_frames
         },
         "titleCardData": {
             "titleText": story.title,
             "subreddit": f"r/{story.subreddit}",
             "author": f"u/{story.author}",
             "upvotes": str(story.score),
+            "keywords": keywords
         },
+        "backgrounds": backgrounds_data,
         "words": words_data
     }
     
@@ -312,9 +366,6 @@ async def run_export_pipeline(url: str):
         json.dump(composition_data, f, indent=2)
         
     print(f"\n✅ Data Export Complete! Output saved to {output_dir}")
-    print("\n--- composition_data.json ---")
-    print(json.dumps(composition_data, indent=2))
-    
     render_video(output_dir)
 
 def run_interactive():
@@ -335,7 +386,7 @@ def run_interactive():
             title_id = input("Enter the Cache ID for the Title TTS audio: ").strip()
         else:
             print("\n--- Quick Test Run ---")
-            title_id = "145190f2f1cb57e7eb2882d6dcc8ff03_1774104704"
+            title_id = "3cdcb63d840e0a19ad703bab4b928fe4_1774288704"
         
         voices_dir = Path("cache") / "elevenlabs" / "voices"
         title_json_path = voices_dir / f"{title_id}.json"
@@ -367,8 +418,10 @@ def run_interactive():
                 part_id = input(f"Enter Cache ID for Part {i}: ").strip()
                 parts[f"Part {i}"] = part_id
         else:
+            # Quick Test Run (Hardcoded Cache)
+            title_id = "3cdcb63d840e0a19ad703bab4b928fe4_1774288704"
             num_parts = 1
-            parts = {"Part 1": "fb5d425957ddf905b37d946b8e0cb529_1774104711"}
+            parts = {"Part 1": "8ff2c43f3f1522bbdfc617c19583ba7d_1774288715"}
             
         cache_config = {
             "title_text": title_text,

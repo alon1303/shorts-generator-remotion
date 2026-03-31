@@ -1,16 +1,23 @@
-import { AbsoluteFill, Audio, Video, staticFile } from "remotion";
+import { AbsoluteFill, Video, staticFile, Sequence } from "remotion";
 import React from "react";
+import { BackgroundTiming } from "./types";
 
-export const Background: React.FC<{ assets: { background: string; audio: string } }> = ({ assets }) => {
+export const Background: React.FC<{ backgrounds: BackgroundTiming[] }> = ({ backgrounds }) => {
   return (
     <AbsoluteFill>
-      <Video
-        src={staticFile(`current_render/${assets.background}`)}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        muted
-        loop
-      />
-      <Audio src={staticFile(`current_render/${assets.audio}`)} />
+      {backgrounds.map((bg, index) => (
+        <Sequence
+          key={index}
+          from={bg.startFrame}
+          durationInFrames={bg.endFrame - bg.startFrame}
+        >
+          <Video
+            src={staticFile(`current_render/${bg.backgroundPath}`)}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            muted
+          />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 };

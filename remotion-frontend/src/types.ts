@@ -12,17 +12,25 @@ export type TitleCardData = {
   keywords: string[];
 };
 
+export type BackgroundTiming = {
+  startFrame: number;
+  endFrame: number;
+  backgroundPath: string;
+};
+
 export type CompositionData = {
   assets: {
     audio: string;
-    background: string;
+    bg_music: string;
   };
   metadata: {
     title: string;
     subreddit: string;
     fps: number;
     duration_frames: number;
+    titleDurationFrames: number;
   };
   titleCardData: TitleCardData;
+  backgrounds: BackgroundTiming[];
   words: WordTiming[];
 };
