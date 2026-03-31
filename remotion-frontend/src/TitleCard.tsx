@@ -1,38 +1,171 @@
-import { Img, Sequence, staticFile, useVideoConfig, spring, useCurrentFrame } from "remotion";
+import { Sequence, useVideoConfig, spring, useCurrentFrame, interpolate } from "remotion";
 import React from "react";
+import { TitleCardData } from "./types";
 
-export const TitleCard: React.FC<{ asset: string }> = ({ asset }) => {
-  const duration = 150; // We'll show title card for 5 seconds
+export const TitleCard: React.FC<{ data: TitleCardData }> = ({ data }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  
-  // A simple spring pop-in
-  const popIn = spring({
+
+  // Entrance animation (0 to 1 over 18 frames = 0.6s at 30fps)
+  const entrance = spring({
     frame,
     fps,
-    config: { damping: 12 },
+    config: {
+      damping: 12,
+      mass: 0.5,
+      stiffness: 100,
+    },
+    durationInFrames: 18,
   });
+
+  // Calculate when the title card should start exiting
+  // In the backend, we typically end the title card after the title is spoken + buffer.
+  // For now, let's assume it matches the words that are in titleCardData.titleText.
+  // A safer approach for now is a fixed duration or until a certain frame if provided.
+  // Looking at the composition_data.json from earlier, the first 10 words (the title) end at frame 147.
+  // Let's use a duration that covers the title.
+  const duration = 180; // ~6 seconds default
+
+  // Exit animation (starts at duration - 24 frames = 0.8s before end)
+  const exit = spring({
+    frame: frame - (duration - 24),
+    fps,
+    config: {
+      damping: 12,
+      mass: 0.5,
+      stiffness: 100,
+    },
+    durationInFrames: 24,
+  });
+
+  const scale = interpolate(entrance, [0, 1], [0.8, 1]) * interpolate(exit, [0, 1], [1, 0.9]);
+  const opacity = entrance * (1 - exit);
+
+  const renderTitle = (text: string, keywords: string[]) => {
+    if (!keywords || keywords.length === 0) return text;
+
+    const words = text.split(" ");
+    return words.map((word, i) => {
+      const cleanWord = word.replace(/[^\w]/g, "").toUpperCase();
+      const isKeyword = keywords.some(k => k.toUpperCase() === cleanWord);
+      
+      return (
+        <span key={i} style={{ color: isKeyword ? "#ff4500" : "white" }}>
+          {word}{" "}
+        </span>
+      );
+    });
+  };
 
   return (
     <Sequence from={0} durationInFrames={duration}>
       <div
         style={{
           position: "absolute",
-          top: "15%",
-          width: "100%",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
           display: "flex",
+          alignItems: "center",
           justifyContent: "center",
-          transform: `scale(${popIn})`,
+          opacity,
+          transform: `scale(${scale})`,
         }}
       >
-        <Img
-          src={staticFile(`current_render/${asset}`)}
+        <div
           style={{
-            width: "80%",
-            borderRadius: 20,
-            boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+            width: "90%",
+            backgroundColor: "#1a1a1b", // Reddit dark mode gray
+            borderRadius: 12,
+            padding: "24px",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.6)",
+            fontFamily: "IBM Plex Sans, Arial, sans-serif",
+            border: "1px solid #343536",
           }}
-        />
+        >
+          {/* Header */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              marginBottom: "12px",
+            }}
+          >
+            {/* Subreddit Icon Mock */}
+            <div
+              style={{
+                width: "24px",
+                height: "24px",
+                backgroundColor: "#ff4500",
+                borderRadius: "50%",
+              }}
+            />
+            <span style={{ color: "#D7DADC", fontWeight: 700, fontSize: "14px" }}>
+              {data.subreddit}
+            </span>
+            <span style={{ color: "#818384", fontSize: "12px" }}>
+              • Posted by {data.author} • 5h
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1
+            style={{
+              color: "#D7DADC",
+              fontSize: "28px",
+              fontWeight: 600,
+              lineHeight: "34px",
+              margin: "0 0 16px 0",
+              wordWrap: "break-word",
+            }}
+          >
+            {renderTitle(data.titleText, data.keywords)}
+          </h1>
+
+          {/* Footer */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#272729",
+                padding: "4px 8px",
+                borderRadius: "4px",
+                gap: "8px",
+              }}
+            >
+              <span style={{ color: "#818384", fontWeight: 700 }}>↑</span>
+              <span style={{ color: "#D7DADC", fontWeight: 700, fontSize: "12px" }}>
+                {data.upvotes}
+              </span>
+              <span style={{ color: "#818384", fontWeight: 700 }}>↓</span>
+            </div>
+            
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#272729",
+                padding: "4px 8px",
+                borderRadius: "4px",
+                gap: "6px",
+              }}
+            >
+              <span style={{ color: "#818384", fontSize: "16px" }}>💬</span>
+              <span style={{ color: "#818384", fontWeight: 700, fontSize: "12px" }}>
+                452 Comments
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </Sequence>
   );

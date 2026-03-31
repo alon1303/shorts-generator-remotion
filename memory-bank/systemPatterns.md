@@ -10,8 +10,8 @@ ShortsGenerator employs a decoupled architecture separating data generation from
 │  (Asset & Data Gen)     │       │ (Video Composition)     │
 │                         │       │                         │
 │ - Fetch Reddit Story    │ JSON  │ - Parse Data Contract   │
-│ - Generate TTS Audio    │ Contract│ - Render Title Card   │
-│ - Create Title Card PNG ├───────▶ - Sync Audio & Subtitles│
+│ - Generate TTS Audio    │ Contract│ - Native React Title Card│
+│ - Calc Timing Frames    ├───────▶ - Sync Audio & Subtitles│
 │ - Select Background MP4 │       │ - Apply Animations      │
 │ - Calculate Timestamps  │       │ - Export MP4 Output     │
 └─────────────────────────┘       └─────────────────────────┘
@@ -20,13 +20,13 @@ ShortsGenerator employs a decoupled architecture separating data generation from
 ## The Data Contract (Core Interface)
 The sole bridge between the Backend and Frontend is a dedicated output folder per project containing exactly:
 1. `audio.mp3` - The generated TTS narration.
-2. `title_card.png` - A static image asset for the story title.
-3. `background.mp4` - The selected background video clip.
+2. `background.mp4` - The selected background video clip.
 4. `composition_data.json` - The main data contract.
 
 ### `composition_data.json` Rules
 - Contains relative paths to the generated assets.
 - Contains the text and timing for subtitles.
+- **Title Card Data**: Contains raw metadata (`titleText`, `subreddit`, `author`, `upvotes`) for native frontend rendering.
 - **CRITICAL TIMING RULE:** The Python backend MUST convert all word timestamps from seconds to frames (based on 30 FPS) before writing them to the JSON. 
   - Formula: `frame = math.floor(seconds * 30)`
 
@@ -35,8 +35,8 @@ The sole bridge between the Backend and Frontend is a dedicated output folder pe
 ### 1. Backend: Data & Asset Exporter (Python)
 - **Reddit/NLP**: Fetches content and splits stories optimally for narration.
 - **Audio/TTS**: Generates narration via Edge TTS/ElevenLabs.
-- **Asset Generator**: Selects background clips and generates static images (e.g., Title Card via Playwright/HTML).
-- **Data Compiler**: Compiles timings, converts seconds to 30fps frames, and writes the `composition_data.json`.
+- **Asset Generator**: Selects background clips. (Note: Static image generation like Title Card has been moved to the Frontend).
+- **Data Compiler**: Compiles timings, converts seconds to 30fps frames, and writes the `composition_data.json` including `titleCardData`.
 - **Constraint**: *No FFmpeg subprocesses for video composition. No rendering logic.*
 
 ### 2. Frontend: Video Renderer (Remotion)

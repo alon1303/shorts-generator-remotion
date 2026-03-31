@@ -1,14 +1,23 @@
 {
   "assets": {
     "audio": "audio.mp3",
-    "title_card": "title_card.png",
     "background": "background.mp4"
   },
   "metadata": {
-    "title": "AITA for testing the Quick Run option exactly as requested?",
-    "subreddit": "RedditStories",
     "fps": 30,
     "duration_frames": 249
+  },
+  "titleCardData": {
+    "titleText": "AITA for testing the Quick Run option exactly as requested?",
+    "subreddit": "r/RedditStories",
+    "author": "u/RedditUser",
+    "upvotes": "15K",
+    "keywords": [
+      "AITA",
+      "QUICK",
+      "EXACTLY",
+      "REQUESTED"
+    ]
   },
   "words": [
     {

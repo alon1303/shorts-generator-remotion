@@ -9,7 +9,7 @@ export const MainComposition: React.FC<{ data: CompositionData }> = ({ data }) =
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <Background assets={data.assets} />
-      <TitleCard asset={data.assets.title_card} />
+      <TitleCard data={data.titleCardData} />
       <Subtitles words={data.words} />
     </AbsoluteFill>
   );

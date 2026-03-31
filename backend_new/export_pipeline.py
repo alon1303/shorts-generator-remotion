@@ -28,7 +28,7 @@ def render_video(output_dir: Path):
     handoff_dir.mkdir(parents=True, exist_ok=True)
     
     # 2. Copy assets
-    for file_name in ["audio.mp3", "title_card.png", "background.mp4", "composition_data.json"]:
+    for file_name in ["audio.mp3", "background.mp4", "composition_data.json"]:
         src_file = output_dir / file_name
         if src_file.exists():
             shutil.copy2(src_file, handoff_dir / file_name)
@@ -95,8 +95,6 @@ async def run_cached_export_pipeline(config: dict):
         logger.error(f"Cache ID not found in cache/elevenlabs/voices: {title_id}")
         sys.exit(1)
     
-    image_gen = RedditImageGenerator()
-    
     for i in range(1, num_parts + 1):
         part_key = f"Part {i}"
         part_id = parts_map[part_key]
@@ -105,25 +103,12 @@ async def run_cached_export_pipeline(config: dict):
         output_dir = Path(f"output_assets/cached_story/part_{i}")
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        # 1. Generate Title Card (Part 1 has no suffix, Part 2+ has "(Part X)" suffix)
+        # 1. Title Formatting
         if i == 1:
             title_card_text = title_text
         else:
             title_card_text = f"{title_text} (Part {i})"
             
-        title_card_path = output_dir / "title_card.png"
-        
-        logger.info(f"Generating Title Card for Part {i}...")
-        await image_gen.generate_reddit_post_image(
-            title=title_card_text,
-            subreddit="RedditStories",
-            score=15000,
-            author="User",
-            comments=None,
-            output_path=title_card_path,
-            custom_keywords=keywords  # Using the shared keywords
-        )
-        
         # 2. Audio & Timing Merge
         part_mp3_path = voices_dir / f"{part_id}.mp3"
         part_json_path = voices_dir / f"{part_id}.json"
@@ -186,14 +171,18 @@ async def run_cached_export_pipeline(config: dict):
         composition_data = {
             "assets": {
                 "audio": "audio.mp3",
-                "title_card": "title_card.png",
                 "background": "background.mp4"
             },
             "metadata": {
-                "title": title_card_text,
-                "subreddit": "RedditStories",
                 "fps": 30,
                 "duration_frames": total_duration_frames
+            },
+            "titleCardData": {
+                "titleText": title_card_text,
+                "subreddit": "r/RedditStories",
+                "author": "u/RedditUser",
+                "upvotes": "15K",
+                "keywords": keywords
             },
             "words": merged_words
         }
@@ -245,18 +234,8 @@ async def run_export_pipeline(url: str):
         engine="edge"
     )
     
-    # 5. Generate Title Card
-    print("Generating Title Card...")
-    image_gen = RedditImageGenerator()
-    title_card_path = output_dir / "title_card.png"
-    await image_gen.generate_reddit_post_image(
-        title=story.title,
-        subreddit=story.subreddit,
-        score=story.score,
-        author=story.author,
-        comments=None,
-        output_path=title_card_path
-    )
+    # 5. Generate Title Card (Skipped - now handled by Remotion)
+    print("Skipping static Title Card generation (handled by Frontend)...")
     
     # 6. Select Background (Mocking this by finding any mp4 or creating a dummy file)
     print("Selecting background...")
@@ -311,7 +290,6 @@ async def run_export_pipeline(url: str):
     composition_data = {
         "assets": {
             "audio": "audio.mp3",
-            "title_card": "title_card.png",
             "background": "background.mp4"
         },
         "metadata": {
@@ -319,6 +297,12 @@ async def run_export_pipeline(url: str):
             "subreddit": story.subreddit,
             "fps": FPS,
             "duration_frames": math.floor(duration * FPS)
+        },
+        "titleCardData": {
+            "titleText": story.title,
+            "subreddit": f"r/{story.subreddit}",
+            "author": f"u/{story.author}",
+            "upvotes": str(story.score),
         },
         "words": words_data
     }

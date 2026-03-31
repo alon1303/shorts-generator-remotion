@@ -4,10 +4,17 @@ export type WordTiming = {
   endFrame: number;
 };
 
+export type TitleCardData = {
+  titleText: string;
+  subreddit: string;
+  author: string;
+  upvotes: string;
+  keywords: string[];
+};
+
 export type CompositionData = {
   assets: {
     audio: string;
-    title_card: string;
     background: string;
   };
   metadata: {
@@ -16,5 +23,6 @@ export type CompositionData = {
     fps: number;
     duration_frames: number;
   };
+  titleCardData: TitleCardData;
   words: WordTiming[];
 };
