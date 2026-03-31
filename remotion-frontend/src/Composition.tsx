@@ -10,7 +10,10 @@ export const MainComposition: React.FC<{ data: CompositionData }> = ({ data }) =
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <Background backgrounds={data.backgrounds} />
       <TitleCard data={data.titleCardData} duration={data.metadata.titleDurationFrames} />
-      <Subtitles words={data.words} />
+      <Subtitles
+        words={data.words}
+        titleDurationFrames={data.metadata.titleDurationFrames}
+      />
       <Audio src={staticFile(`current_render/${data.assets.audio}`)} />
       {data.assets.bg_music && (
         <Audio

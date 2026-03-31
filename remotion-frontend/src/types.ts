@@ -1,7 +1,7 @@
 export type WordTiming = {
   word: string;
-  startFrame: number;
-  endFrame: number;
+  startMs: number;
+  endMs: number;
 };
 
 export type TitleCardData = {

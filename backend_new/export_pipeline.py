@@ -7,6 +7,7 @@ import json
 import logging
 import random
 from pathlib import Path
+import time
 from reddit_story.reddit_client import RedditClient
 from reddit_story.story_processor import StoryProcessor
 from reddit_story.tts_router import generate_title_and_story_audio, get_tts_client
@@ -93,15 +94,15 @@ def render_video(output_dir: Path):
     logger.info("Starting Remotion rendering process...")
     frontend_dir = Path(__file__).parent.parent / "remotion-frontend"
     handoff_dir = frontend_dir / "public" / "current_render"
+    src_dir = frontend_dir / "src"
     
-    # 1. Clear and create handoff folder
-    if handoff_dir.exists():
-        shutil.rmtree(handoff_dir)
+    # 1. Ensure directories exist (DO NOT rmtree - it corrupts Webpack watcher)
     handoff_dir.mkdir(parents=True, exist_ok=True)
+    src_dir.mkdir(parents=True, exist_ok=True)
     
-    # 2. Copy core assets
-    assets_to_copy = ["audio.mp3", "composition_data.json", "lofi_bg.mp3"]
-    for file_name in assets_to_copy:
+    # 2. Copy media assets to public/current_render
+    media_assets = ["audio.mp3", "lofi_bg.mp3"]
+    for file_name in media_assets:
         src_file = output_dir / file_name
         if src_file.exists():
             shutil.copy2(src_file, handoff_dir / file_name)
@@ -111,22 +112,30 @@ def render_video(output_dir: Path):
             if backend_assets.exists():
                 shutil.copy2(backend_assets, handoff_dir / "lofi_bg.mp3")
 
-    # 3. Copy backgrounds folder
+    # 3. Copy composition_data.json to src/ (Webpack Stability Fix)
+    json_src = output_dir / "composition_data.json"
+    if json_src.exists():
+        shutil.copy2(json_src, src_dir / "composition_data.json")
+
+    # 4. Copy backgrounds folder to public/current_render
     src_bg_dir = output_dir / "backgrounds"
     if src_bg_dir.exists():
-        shutil.copytree(src_bg_dir, handoff_dir / "backgrounds")
+        dest_bg_dir = handoff_dir / "backgrounds"
+        if dest_bg_dir.exists():
+            shutil.rmtree(dest_bg_dir)
+        shutil.copytree(src_bg_dir, dest_bg_dir)
             
-    # 4. Set up command
+    # 5. Set up command
     out_file = frontend_dir / "out" / "final_video.mp4"
     if out_file.exists():
         out_file.unlink()
         
     npx_cmd = "npx.cmd" if sys.platform == "win32" else "npx"
-    cmd = [npx_cmd, "remotion", "render", "src/index.ts", "RedditShort", "out/final_video.mp4"]
+    cmd = [npx_cmd, "remotion", "render", "src/index.ts", "RedditShort", "out/final_video.mp4", "--no-cache"]
     
     logger.info(f"Executing: {' '.join(cmd)} inside {frontend_dir.resolve()}")
     
-    # 5. Execute Remotion
+    # 6. Execute Remotion
     process = subprocess.Popen(
         cmd,
         cwd=str(frontend_dir.resolve()),
@@ -146,7 +155,7 @@ def render_video(output_dir: Path):
         logger.error("Remotion rendering failed.")
         sys.exit(1)
         
-    # 6. Move back to output dir
+    # 7. Move back to output dir
     final_dest = output_dir / "final_video.mp4"
     if out_file.exists():
         shutil.move(str(out_file), str(final_dest))
@@ -164,12 +173,6 @@ async def run_cached_export_pipeline(config: dict):
     parts_map = config["parts"]
     
     voices_dir = Path("cache") / "elevenlabs" / "voices"
-    
-    # Optimization: Extract keywords ONCE
-    processor = StoryProcessor()
-    logger.info(f"Extracting keywords for title: {title_text}")
-    keywords = await processor._extract_power_words_single(title_text)
-    logger.info(f"Extracted keywords: {keywords}")
     
     title_mp3_path = voices_dir / f"{title_id}.mp3"
     title_json_path = voices_dir / f"{title_id}.json"
@@ -214,28 +217,29 @@ async def run_cached_export_pipeline(config: dict):
             with open(part_mp3_path, "rb") as f_in2:
                 f_out.write(f_in2.read())
                 
-        # Merge Timestamps
+        # Merge Timestamps (Strict Millisecond Precision)
         # Determine title duration by looking at the last word's end time, plus a small buffer
-        title_duration = title_words[-1]["end"] + 0.5 if title_words else 0.0
-        title_duration_frames = math.floor(title_duration * 30)
+        # ElevenLabs/EdgeTTS results are already in seconds (float)
+        title_duration_sec = title_words[-1]["end"] + 0.5 if title_words else 0.0
+        title_duration_frames = math.floor(title_duration_sec * 30)
         
         merged_words = []
         for w in title_words:
             merged_words.append({
                 "word": w["word"],
-                "startFrame": math.floor(w["start"] * 30),
-                "endFrame": math.floor(w["end"] * 30)
+                "startMs": int(w["start"] * 1000),
+                "endMs": int(w["end"] * 1000)
             })
             
         for w in part_words:
             merged_words.append({
                 "word": w["word"],
-                "startFrame": math.floor((w["start"] + title_duration) * 30),
-                "endFrame": math.floor((w["end"] + title_duration) * 30)
+                "startMs": int((w["start"] + title_duration_sec) * 1000),
+                "endMs": int((w["end"] + title_duration_sec) * 1000)
             })
             
         # Total duration in frames
-        total_duration_seconds = part_words[-1]["end"] + title_duration if part_words else title_duration
+        total_duration_seconds = part_words[-1]["end"] + title_duration_sec if part_words else title_duration_sec
         total_duration_frames = math.floor(total_duration_seconds * 30)
         
         # 3. Dynamic Background Selection
@@ -259,7 +263,7 @@ async def run_cached_export_pipeline(config: dict):
                 "subreddit": "r/RedditStories",
                 "author": "u/RedditUser",
                 "upvotes": "15K",
-                "keywords": keywords
+                "keywords": []
             },
             "backgrounds": backgrounds_data,
             "words": merged_words
@@ -268,7 +272,9 @@ async def run_cached_export_pipeline(config: dict):
         json_path = output_dir / "composition_data.json"
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(composition_data, f, indent=2)
-            
+        
+        time.sleep(2) # Small delay to ensure file system is ready for next steps
+
         logger.info(f"✅ Part {i} Data Export Complete! Output saved to {output_dir}")
         render_video(output_dir)
 
@@ -326,8 +332,8 @@ async def run_export_pipeline(url: str):
         for ts in word_timestamps:
             words_data.append({
                 "word": ts.word,
-                "startFrame": math.floor(ts.start * FPS),
-                "endFrame": math.floor(ts.end * FPS)
+                "startMs": int(ts.start * 1000),
+                "endMs": int(ts.end * 1000)
             })
             
     total_duration_frames = math.floor(duration * FPS)

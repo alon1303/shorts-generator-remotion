@@ -15,11 +15,7 @@
     "subreddit": "r/RedditStories",
     "author": "u/RedditUser",
     "upvotes": "15K",
-    "keywords": [
-      "FORCING",
-      "STINK",
-      "CHANGE"
-    ]
+    "keywords": []
   },
   "backgrounds": [
     {
@@ -29,26 +25,26 @@
     },
     {
       "startFrame": 330,
-      "endFrame": 673,
+      "endFrame": 675,
       "backgroundPath": "backgrounds/bg_1.mp4"
     },
     {
-      "startFrame": 673,
-      "endFrame": 1085,
+      "startFrame": 675,
+      "endFrame": 985,
       "backgroundPath": "backgrounds/bg_2.mp4"
     },
     {
-      "startFrame": 1085,
-      "endFrame": 1514,
+      "startFrame": 985,
+      "endFrame": 1428,
       "backgroundPath": "backgrounds/bg_3.mp4"
     },
     {
-      "startFrame": 1514,
-      "endFrame": 1843,
+      "startFrame": 1428,
+      "endFrame": 1837,
       "backgroundPath": "backgrounds/bg_4.mp4"
     },
     {
-      "startFrame": 1843,
+      "startFrame": 1837,
       "endFrame": 2072,
       "backgroundPath": "backgrounds/bg_5.mp4"
     }

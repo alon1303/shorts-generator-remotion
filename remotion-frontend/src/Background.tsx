@@ -9,7 +9,8 @@ export const Background: React.FC<{ backgrounds: BackgroundTiming[] }> = ({ back
         <Sequence
           key={index}
           from={bg.startFrame}
-          durationInFrames={bg.endFrame - bg.startFrame}
+          // Overlap by 15 frames to prevent black decoding flashes
+          durationInFrames={(bg.endFrame - bg.startFrame) + 15}
         >
           <Video
             src={staticFile(`current_render/${bg.backgroundPath}`)}
