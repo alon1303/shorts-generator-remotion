@@ -20,1035 +20,1133 @@
   "backgrounds": [
     {
       "startFrame": 0,
-      "endFrame": 349,
+      "endFrame": 318,
       "backgroundPath": "backgrounds/bg_0.mp4"
     },
     {
-      "startFrame": 349,
-      "endFrame": 772,
+      "startFrame": 318,
+      "endFrame": 667,
       "backgroundPath": "backgrounds/bg_1.mp4"
     },
     {
-      "startFrame": 772,
-      "endFrame": 1089,
+      "startFrame": 667,
+      "endFrame": 1093,
       "backgroundPath": "backgrounds/bg_2.mp4"
     },
     {
-      "startFrame": 1089,
-      "endFrame": 1464,
+      "startFrame": 1093,
+      "endFrame": 1503,
       "backgroundPath": "backgrounds/bg_3.mp4"
     },
     {
-      "startFrame": 1464,
-      "endFrame": 1822,
+      "startFrame": 1503,
+      "endFrame": 1887,
       "backgroundPath": "backgrounds/bg_4.mp4"
     },
     {
-      "startFrame": 1822,
+      "startFrame": 1887,
       "endFrame": 2072,
       "backgroundPath": "backgrounds/bg_5.mp4"
     }
   ],
   "words": [
     {
-      "word": "AITA",
-      "startMs": 0,
-      "endMs": 580
-    },
-    {
-      "word": "for",
-      "startMs": 697,
-      "endMs": 801
-    },
-    {
-      "word": "making",
-      "startMs": 848,
-      "endMs": 1057
-    },
-    {
-      "word": "a",
-      "startMs": 1080,
-      "endMs": 1103
-    },
-    {
-      "word": "stink",
-      "startMs": 1138,
-      "endMs": 1358
-    },
-    {
-      "word": "at",
-      "startMs": 1405,
-      "endMs": 1474
-    },
-    {
-      "word": "school",
-      "startMs": 1509,
-      "endMs": 1765
-    },
-    {
-      "word": "and",
-      "startMs": 1811,
-      "endMs": 1892
-    },
-    {
-      "word": "forcing",
-      "startMs": 1939,
-      "endMs": 2252
-    },
-    {
-      "word": "the",
-      "startMs": 2287,
-      "endMs": 2357
-    },
-    {
-      "word": "teacher",
-      "startMs": 2392,
-      "endMs": 2635
-    },
-    {
-      "word": "to",
-      "startMs": 2682,
-      "endMs": 2728
-    },
-    {
-      "word": "change",
-      "startMs": 2786,
-      "endMs": 3053
-    },
-    {
-      "word": "my",
-      "startMs": 3088,
-      "endMs": 3158
-    },
-    {
-      "word": "kids",
-      "startMs": 3216,
-      "endMs": 3425
-    },
-    {
-      "word": "math",
-      "startMs": 3460,
-      "endMs": 3669
-    },
-    {
-      "word": "grade",
-      "startMs": 3704,
-      "endMs": 4272
-    },
-    {
       "word": "My",
-      "startMs": 4772,
-      "endMs": 4993
+      "start": 0.0,
+      "end": 0.221,
+      "confidence": 1.0
     },
     {
       "word": "kid",
-      "startMs": 5062,
-      "endMs": 5376
+      "start": 0.29,
+      "end": 0.604,
+      "confidence": 1.0
     },
     {
       "word": "(4th",
-      "startMs": 5527,
-      "endMs": 5968
+      "start": 0.755,
+      "end": 1.196,
+      "confidence": 1.0
     },
     {
       "word": "grade)",
-      "startMs": 6026,
-      "endMs": 6513
+      "start": 1.254,
+      "end": 1.741,
+      "confidence": 1.0
     },
     {
       "word": "has",
-      "startMs": 6711,
-      "endMs": 6873
+      "start": 1.939,
+      "end": 2.101,
+      "confidence": 1.0
     },
     {
       "word": "been",
-      "startMs": 6931,
-      "endMs": 7082
+      "start": 2.159,
+      "end": 2.31,
+      "confidence": 1.0
     },
     {
       "word": "struggling",
-      "startMs": 7152,
-      "endMs": 7663
+      "start": 2.38,
+      "end": 2.891,
+      "confidence": 1.0
     },
     {
       "word": "in",
-      "startMs": 7709,
-      "endMs": 7767
+      "start": 2.937,
+      "end": 2.995,
+      "confidence": 1.0
     },
     {
       "word": "math.",
-      "startMs": 7837,
-      "endMs": 8371
+      "start": 3.065,
+      "end": 3.599,
+      "confidence": 1.0
     },
     {
       "word": "It\u2019s",
-      "startMs": 8685,
-      "endMs": 8882
+      "start": 3.913,
+      "end": 4.11,
+      "confidence": 1.0
     },
     {
       "word": "been",
-      "startMs": 8917,
-      "endMs": 9068
+      "start": 4.145,
+      "end": 4.296,
+      "confidence": 1.0
     },
     {
       "word": "an",
-      "startMs": 9103,
-      "endMs": 9161
+      "start": 4.331,
+      "end": 4.389,
+      "confidence": 1.0
     },
     {
       "word": "ongoing",
-      "startMs": 9253,
-      "endMs": 9788
+      "start": 4.481,
+      "end": 5.016,
+      "confidence": 1.0
     },
     {
       "word": "issue",
-      "startMs": 9869,
-      "endMs": 10623
+      "start": 5.097,
+      "end": 5.851,
+      "confidence": 1.0
     },
     {
       "word": "This",
-      "startMs": 11123,
-      "endMs": 11308
+      "start": 6.351,
+      "end": 6.536,
+      "confidence": 1.0
     },
     {
       "word": "whole",
-      "startMs": 11343,
-      "endMs": 11517
+      "start": 6.571,
+      "end": 6.745,
+      "confidence": 1.0
     },
     {
       "word": "year,",
-      "startMs": 11541,
-      "endMs": 11773
+      "start": 6.769,
+      "end": 7.001,
+      "confidence": 1.0
     },
     {
       "word": "she",
-      "startMs": 11818,
-      "endMs": 11959
+      "start": 7.047,
+      "end": 7.187,
+      "confidence": 1.0
     },
     {
       "word": "has",
-      "startMs": 12017,
-      "endMs": 12133
+      "start": 7.245,
+      "end": 7.361,
+      "confidence": 1.0
     },
     {
       "word": "struggled",
-      "startMs": 12179,
-      "endMs": 12644
+      "start": 7.407,
+      "end": 7.872,
+      "confidence": 1.0
     },
     {
       "word": "with",
-      "startMs": 12702,
-      "endMs": 12853
+      "start": 7.93,
+      "end": 8.081,
+      "confidence": 1.0
     },
     {
       "word": "multiplication",
-      "startMs": 12911,
-      "endMs": 13677
+      "start": 8.139,
+      "end": 8.905,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 13747,
-      "endMs": 13851
+      "start": 8.975,
+      "end": 9.079,
+      "confidence": 1.0
     },
     {
       "word": "division",
-      "startMs": 13897,
-      "endMs": 14327
+      "start": 9.125,
+      "end": 9.555,
+      "confidence": 1.0
     },
     {
       "word": "specifically.",
-      "startMs": 14408,
-      "endMs": 15384
+      "start": 9.636,
+      "end": 10.612,
+      "confidence": 1.0
     },
     {
       "word": "It\u2019s",
-      "startMs": 15813,
-      "endMs": 15976
+      "start": 11.041,
+      "end": 11.204,
+      "confidence": 1.0
     },
     {
       "word": "been",
-      "startMs": 16009,
-      "endMs": 16149
+      "start": 11.238,
+      "end": 11.378,
+      "confidence": 1.0
     },
     {
       "word": "a",
-      "startMs": 16207,
-      "endMs": 16243
+      "start": 11.436,
+      "end": 11.471,
+      "confidence": 1.0
     },
     {
       "word": "constant",
-      "startMs": 16335,
-      "endMs": 16904
+      "start": 11.564,
+      "end": 12.132,
+      "confidence": 1.0
     },
     {
       "word": "issue,",
-      "startMs": 16974,
-      "endMs": 17659
+      "start": 12.202,
+      "end": 12.887,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 17833,
-      "endMs": 18006
+      "start": 13.061,
+      "end": 13.235,
+      "confidence": 1.0
     },
     {
       "word": "it",
-      "startMs": 18089,
-      "endMs": 18182
+      "start": 13.317,
+      "end": 13.41,
+      "confidence": 1.0
     },
     {
       "word": "got",
-      "startMs": 18240,
-      "endMs": 18414
+      "start": 13.468,
+      "end": 13.642,
+      "confidence": 1.0
     },
     {
       "word": "even",
-      "startMs": 18472,
-      "endMs": 18727
+      "start": 13.7,
+      "end": 13.955,
+      "confidence": 1.0
     },
     {
       "word": "worse",
-      "startMs": 18797,
-      "endMs": 19168
+      "start": 14.025,
+      "end": 14.396,
+      "confidence": 1.0
     },
     {
       "word": "when",
-      "startMs": 19203,
-      "endMs": 19331
+      "start": 14.431,
+      "end": 14.559,
+      "confidence": 1.0
     },
     {
       "word": "they",
-      "startMs": 19366,
-      "endMs": 19470
+      "start": 14.594,
+      "end": 14.698,
+      "confidence": 1.0
     },
     {
       "word": "moved",
-      "startMs": 19528,
-      "endMs": 19726
+      "start": 14.756,
+      "end": 14.954,
+      "confidence": 1.0
     },
     {
       "word": "on",
-      "startMs": 19772,
-      "endMs": 19853
+      "start": 15.0,
+      "end": 15.081,
+      "confidence": 1.0
     },
     {
       "word": "to",
-      "startMs": 19900,
-      "endMs": 19958
+      "start": 15.128,
+      "end": 15.186,
+      "confidence": 1.0
     },
     {
       "word": "multiplying",
-      "startMs": 20039,
-      "endMs": 20643
+      "start": 15.267,
+      "end": 15.871,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 20701,
-      "endMs": 20782
+      "start": 15.929,
+      "end": 16.01,
+      "confidence": 1.0
     },
     {
       "word": "dividing",
-      "startMs": 20817,
-      "endMs": 21200
+      "start": 16.045,
+      "end": 16.428,
+      "confidence": 1.0
     },
     {
       "word": "with",
-      "startMs": 21235,
-      "endMs": 21363
+      "start": 16.463,
+      "end": 16.591,
+      "confidence": 1.0
     },
     {
       "word": "multiple",
-      "startMs": 21432,
-      "endMs": 21897
+      "start": 16.66,
+      "end": 17.125,
+      "confidence": 1.0
     },
     {
       "word": "digits.",
-      "startMs": 21932,
-      "endMs": 22593
+      "start": 17.16,
+      "end": 17.821,
+      "confidence": 1.0
     },
     {
       "word": "We\u2019ve",
-      "startMs": 23023,
-      "endMs": 23255
+      "start": 18.251,
+      "end": 18.483,
+      "confidence": 1.0
     },
     {
       "word": "tried",
-      "startMs": 23278,
-      "endMs": 23511
+      "start": 18.506,
+      "end": 18.739,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 23534,
-      "endMs": 23604
+      "start": 18.762,
+      "end": 18.832,
+      "confidence": 1.0
     },
     {
       "word": "school\u2019s",
-      "startMs": 23637,
-      "endMs": 23939
+      "start": 18.866,
+      "end": 19.168,
+      "confidence": 1.0
     },
     {
       "word": "tutoring,",
-      "startMs": 23987,
-      "endMs": 24648
+      "start": 19.215,
+      "end": 19.876,
+      "confidence": 1.0
     },
     {
       "word": "but",
-      "startMs": 24718,
-      "endMs": 24962
+      "start": 19.946,
+      "end": 20.19,
+      "confidence": 1.0
     },
     {
       "word": "overall",
-      "startMs": 25078,
-      "endMs": 25624
+      "start": 20.306,
+      "end": 20.852,
+      "confidence": 1.0
     },
     {
       "word": "she\u2019s",
-      "startMs": 25740,
-      "endMs": 25972
+      "start": 20.968,
+      "end": 21.2,
+      "confidence": 1.0
     },
     {
       "word": "just",
-      "startMs": 26052,
-      "endMs": 26250
+      "start": 21.281,
+      "end": 21.479,
+      "confidence": 1.0
     },
     {
       "word": "not",
-      "startMs": 26285,
-      "endMs": 26412
+      "start": 21.513,
+      "end": 21.641,
+      "confidence": 1.0
     },
     {
       "word": "getting",
-      "startMs": 26460,
-      "endMs": 26715
+      "start": 21.688,
+      "end": 21.943,
+      "confidence": 1.0
     },
     {
       "word": "it.",
-      "startMs": 26785,
-      "endMs": 27075
+      "start": 22.013,
+      "end": 22.303,
+      "confidence": 1.0
     },
     {
       "word": "She",
-      "startMs": 27503,
-      "endMs": 27621
+      "start": 22.732,
+      "end": 22.849,
+      "confidence": 1.0
     },
     {
       "word": "doesn\u2019t",
-      "startMs": 27667,
-      "endMs": 27911
+      "start": 22.895,
+      "end": 23.139,
+      "confidence": 1.0
     },
     {
       "word": "get",
-      "startMs": 27945,
-      "endMs": 28073
+      "start": 23.174,
+      "end": 23.301,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 28119,
-      "endMs": 28189
+      "start": 23.348,
+      "end": 23.417,
+      "confidence": 1.0
     },
     {
       "word": "method",
-      "startMs": 28282,
-      "endMs": 28561
+      "start": 23.51,
+      "end": 23.789,
+      "confidence": 1.0
     },
     {
       "word": "they",
-      "startMs": 28596,
-      "endMs": 28712
+      "start": 23.824,
+      "end": 23.94,
+      "confidence": 1.0
     },
     {
       "word": "are",
-      "startMs": 28747,
-      "endMs": 28851
+      "start": 23.975,
+      "end": 24.079,
+      "confidence": 1.0
     },
     {
       "word": "teaching",
-      "startMs": 28898,
-      "endMs": 29420
+      "start": 24.126,
+      "end": 24.648,
+      "confidence": 1.0
     },
     {
       "word": "(",
-      "startMs": 29618,
-      "endMs": 29676
+      "start": 24.846,
+      "end": 24.904,
+      "confidence": 1.0
     },
     {
       "word": "she",
-      "startMs": 30046,
-      "endMs": 30152
+      "start": 25.275,
+      "end": 25.38,
+      "confidence": 1.0
     },
     {
       "word": "gets",
-      "startMs": 30210,
-      "endMs": 30384
+      "start": 25.438,
+      "end": 25.612,
+      "confidence": 1.0
     },
     {
       "word": "it",
-      "startMs": 30418,
-      "endMs": 30465
+      "start": 25.647,
+      "end": 25.693,
+      "confidence": 1.0
     },
     {
       "word": "wrong",
-      "startMs": 30488,
-      "endMs": 30697
+      "start": 25.716,
+      "end": 25.925,
+      "confidence": 1.0
     },
     {
       "word": "like",
-      "startMs": 30755,
-      "endMs": 30918
+      "start": 25.983,
+      "end": 26.146,
+      "confidence": 1.0
     },
     {
       "word": "80%",
-      "startMs": 30987,
-      "endMs": 31487
+      "start": 26.215,
+      "end": 26.715,
+      "confidence": 1.0
     },
     {
       "word": "of",
-      "startMs": 31580,
-      "endMs": 31625
+      "start": 26.808,
+      "end": 26.854,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 31671,
-      "endMs": 31741
+      "start": 26.9,
+      "end": 26.97,
+      "confidence": 1.0
     },
     {
       "word": "time).",
-      "startMs": 31789,
-      "endMs": 32299
+      "start": 27.017,
+      "end": 27.527,
+      "confidence": 1.0
     },
     {
       "word": "It",
-      "startMs": 32799,
-      "endMs": 32938
+      "start": 28.027,
+      "end": 28.166,
+      "confidence": 1.0
     },
     {
       "word": "isn\u2019t",
-      "startMs": 32984,
-      "endMs": 33205
+      "start": 28.212,
+      "end": 28.433,
+      "confidence": 1.0
     },
     {
       "word": "easier",
-      "startMs": 33251,
-      "endMs": 33727
+      "start": 28.479,
+      "end": 28.955,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 33844,
-      "endMs": 34040
+      "start": 29.072,
+      "end": 29.268,
+      "confidence": 1.0
     },
     {
       "word": "it\u2019s",
-      "startMs": 34122,
-      "endMs": 34296
+      "start": 29.35,
+      "end": 29.524,
+      "confidence": 1.0
     },
     {
       "word": "just",
-      "startMs": 34354,
-      "endMs": 34528
+      "start": 29.582,
+      "end": 29.756,
+      "confidence": 1.0
     },
     {
       "word": "more",
-      "startMs": 34563,
-      "endMs": 34749
+      "start": 29.791,
+      "end": 29.977,
+      "confidence": 1.0
     },
     {
       "word": "steps.",
-      "startMs": 34795,
-      "endMs": 35468
+      "start": 30.023,
+      "end": 30.696,
+      "confidence": 1.0
     },
     {
       "word": "Example",
-      "startMs": 35840,
-      "endMs": 36432
+      "start": 31.068,
+      "end": 31.66,
+      "confidence": 1.0
     },
     {
       "word": "multiplying\u2026",
-      "startMs": 36513,
-      "endMs": 37547
+      "start": 31.741,
+      "end": 32.775,
+      "confidence": 1.0
     },
     {
       "word": "you",
-      "startMs": 37976,
-      "endMs": 38068
+      "start": 33.204,
+      "end": 33.297,
+      "confidence": 1.0
     },
     {
       "word": "break",
-      "startMs": 38116,
-      "endMs": 38301
+      "start": 33.344,
+      "end": 33.529,
+      "confidence": 1.0
     },
     {
       "word": "up",
-      "startMs": 38336,
-      "endMs": 38428
+      "start": 33.564,
+      "end": 33.657,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 38475,
-      "endMs": 38545
+      "start": 33.703,
+      "end": 33.773,
+      "confidence": 1.0
     },
     {
       "word": "numbers,",
-      "startMs": 38603,
-      "endMs": 39300
+      "start": 33.831,
+      "end": 34.528,
+      "confidence": 1.0
     },
     {
       "word": "draw",
-      "startMs": 39346,
-      "endMs": 39589
+      "start": 34.574,
+      "end": 34.818,
+      "confidence": 1.0
     },
     {
       "word": "boxes,",
-      "startMs": 39660,
-      "endMs": 40565
+      "start": 34.888,
+      "end": 35.793,
+      "confidence": 1.0
     },
     {
       "word": "then",
-      "startMs": 40739,
-      "endMs": 40902
+      "start": 35.967,
+      "end": 36.13,
+      "confidence": 1.0
     },
     {
       "word": "multiply",
-      "startMs": 40960,
-      "endMs": 41552
+      "start": 36.188,
+      "end": 36.78,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 41668,
-      "endMs": 41796
+      "start": 36.896,
+      "end": 37.024,
+      "confidence": 1.0
     },
     {
       "word": "finally",
-      "startMs": 41854,
-      "endMs": 42167
+      "start": 37.082,
+      "end": 37.395,
+      "confidence": 1.0
     },
     {
       "word": "add",
-      "startMs": 42237,
-      "endMs": 42446
+      "start": 37.465,
+      "end": 37.674,
+      "confidence": 1.0
     },
     {
       "word": "them",
-      "startMs": 42481,
-      "endMs": 42609
+      "start": 37.709,
+      "end": 37.837,
+      "confidence": 1.0
     },
     {
       "word": "all",
-      "startMs": 42655,
-      "endMs": 42818
+      "start": 37.883,
+      "end": 38.046,
+      "confidence": 1.0
     },
     {
       "word": "up.",
-      "startMs": 42899,
-      "endMs": 43327
+      "start": 38.127,
+      "end": 38.556,
+      "confidence": 1.0
     },
     {
       "word": "I",
-      "startMs": 43909,
-      "endMs": 43967
+      "start": 39.137,
+      "end": 39.195,
+      "confidence": 1.0
     },
     {
       "word": "decided",
-      "startMs": 44083,
-      "endMs": 44466
+      "start": 39.311,
+      "end": 39.694,
+      "confidence": 1.0
     },
     {
       "word": "to",
-      "startMs": 44513,
-      "endMs": 44571
+      "start": 39.741,
+      "end": 39.799,
+      "confidence": 1.0
     },
     {
       "word": "teach",
-      "startMs": 44629,
-      "endMs": 44873
+      "start": 39.857,
+      "end": 40.101,
+      "confidence": 1.0
     },
     {
       "word": "her",
-      "startMs": 44907,
-      "endMs": 44977
+      "start": 40.135,
+      "end": 40.205,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 45022,
-      "endMs": 45093
+      "start": 40.251,
+      "end": 40.321,
+      "confidence": 1.0
     },
     {
       "word": "way",
-      "startMs": 45140,
-      "endMs": 45244
+      "start": 40.368,
+      "end": 40.472,
+      "confidence": 1.0
     },
     {
       "word": "I",
-      "startMs": 45290,
-      "endMs": 45314
+      "start": 40.518,
+      "end": 40.542,
+      "confidence": 1.0
     },
     {
       "word": "learned,",
-      "startMs": 45407,
-      "endMs": 46022
+      "start": 40.635,
+      "end": 41.25,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 46335,
-      "endMs": 46556
+      "start": 41.563,
+      "end": 41.784,
+      "confidence": 1.0
     },
     {
       "word": "she",
-      "startMs": 46637,
-      "endMs": 46730
+      "start": 41.865,
+      "end": 41.958,
+      "confidence": 1.0
     },
     {
       "word": "understands",
-      "startMs": 46777,
-      "endMs": 47287
+      "start": 42.005,
+      "end": 42.515,
+      "confidence": 1.0
     },
     {
       "word": "it.",
-      "startMs": 47333,
-      "endMs": 47589
+      "start": 42.562,
+      "end": 42.817,
+      "confidence": 1.0
     },
     {
       "word": "Homework",
-      "startMs": 48170,
-      "endMs": 48681
+      "start": 43.398,
+      "end": 43.909,
+      "confidence": 1.0
     },
     {
       "word": "is",
-      "startMs": 48762,
-      "endMs": 48936
+      "start": 43.99,
+      "end": 44.164,
+      "confidence": 1.0
     },
     {
       "word": "a",
-      "startMs": 48994,
-      "endMs": 49029
+      "start": 44.222,
+      "end": 44.257,
+      "confidence": 1.0
     },
     {
       "word": "million",
-      "startMs": 49144,
-      "endMs": 49492
+      "start": 44.373,
+      "end": 44.721,
+      "confidence": 1.0
     },
     {
       "word": "times",
-      "startMs": 49540,
-      "endMs": 49806
+      "start": 44.768,
+      "end": 45.035,
+      "confidence": 1.0
     },
     {
       "word": "easier",
-      "startMs": 49865,
-      "endMs": 50178
+      "start": 45.093,
+      "end": 45.406,
+      "confidence": 1.0
     },
     {
       "word": "now",
-      "startMs": 50236,
-      "endMs": 50376
+      "start": 45.464,
+      "end": 45.604,
+      "confidence": 1.0
     },
     {
       "word": "because",
-      "startMs": 50445,
-      "endMs": 50827
+      "start": 45.673,
+      "end": 46.056,
+      "confidence": 1.0
     },
     {
       "word": "she",
-      "startMs": 50897,
-      "endMs": 51129
+      "start": 46.126,
+      "end": 46.358,
+      "confidence": 1.0
     },
     {
       "word": "can",
-      "startMs": 51245,
-      "endMs": 51548
+      "start": 46.474,
+      "end": 46.776,
+      "confidence": 1.0
     },
     {
       "word": "actually",
-      "startMs": 51617,
-      "endMs": 51966
+      "start": 46.846,
+      "end": 47.194,
+      "confidence": 1.0
     },
     {
       "word": "solve",
-      "startMs": 52013,
-      "endMs": 52222
+      "start": 47.241,
+      "end": 47.45,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 52245,
-      "endMs": 52315
+      "start": 47.473,
+      "end": 47.543,
+      "confidence": 1.0
     },
     {
       "word": "questions.",
-      "startMs": 52349,
-      "endMs": 53080
+      "start": 47.577,
+      "end": 48.309,
+      "confidence": 1.0
     },
     {
       "word": "The",
-      "startMs": 53580,
-      "endMs": 53708
+      "start": 48.808,
+      "end": 48.936,
+      "confidence": 1.0
     },
     {
       "word": "issue",
-      "startMs": 53777,
-      "endMs": 54079
+      "start": 49.005,
+      "end": 49.307,
+      "confidence": 1.0
     },
     {
       "word": "is",
-      "startMs": 54114,
-      "endMs": 54242
+      "start": 49.342,
+      "end": 49.47,
+      "confidence": 1.0
     },
     {
       "word": "that",
-      "startMs": 54323,
-      "endMs": 54845
+      "start": 49.551,
+      "end": 50.073,
+      "confidence": 1.0
     },
     {
       "word": "my",
-      "startMs": 55275,
-      "endMs": 55403
+      "start": 50.503,
+      "end": 50.631,
+      "confidence": 1.0
     },
     {
       "word": "daughter",
-      "startMs": 55449,
-      "endMs": 55693
+      "start": 50.677,
+      "end": 50.921,
+      "confidence": 1.0
     },
     {
       "word": "had",
-      "startMs": 55739,
-      "endMs": 55856
+      "start": 50.967,
+      "end": 51.084,
+      "confidence": 1.0
     },
     {
       "word": "a",
-      "startMs": 55890,
-      "endMs": 55914
+      "start": 51.118,
+      "end": 51.142,
+      "confidence": 1.0
     },
     {
       "word": "math",
-      "startMs": 55960,
-      "endMs": 56204
+      "start": 51.188,
+      "end": 51.432,
+      "confidence": 1.0
     },
     {
       "word": "test",
-      "startMs": 56285,
-      "endMs": 56552
+      "start": 51.513,
+      "end": 51.78,
+      "confidence": 1.0
     },
     {
       "word": "last",
-      "startMs": 56622,
-      "endMs": 56854
+      "start": 51.85,
+      "end": 52.082,
+      "confidence": 1.0
     },
     {
       "word": "week,",
-      "startMs": 56912,
-      "endMs": 57214
+      "start": 52.14,
+      "end": 52.442,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 57284,
-      "endMs": 57446
+      "start": 52.512,
+      "end": 52.674,
+      "confidence": 1.0
     },
     {
       "word": "she",
-      "startMs": 57504,
-      "endMs": 57597
+      "start": 52.732,
+      "end": 52.825,
+      "confidence": 1.0
     },
     {
       "word": "came",
-      "startMs": 57643,
-      "endMs": 57818
+      "start": 52.871,
+      "end": 53.046,
+      "confidence": 1.0
     },
     {
       "word": "home",
-      "startMs": 57852,
-      "endMs": 58027
+      "start": 53.08,
+      "end": 53.255,
+      "confidence": 1.0
     },
     {
       "word": "upset.",
-      "startMs": 58085,
-      "endMs": 58654
+      "start": 53.313,
+      "end": 53.882,
+      "confidence": 1.0
     },
     {
       "word": "She",
-      "startMs": 59083,
-      "endMs": 59199
+      "start": 54.311,
+      "end": 54.427,
+      "confidence": 1.0
     },
     {
       "word": "got",
-      "startMs": 59245,
-      "endMs": 59373
+      "start": 54.474,
+      "end": 54.601,
+      "confidence": 1.0
     },
     {
       "word": "a",
-      "startMs": 59408,
-      "endMs": 59431
+      "start": 54.636,
+      "end": 54.659,
+      "confidence": 1.0
     },
     {
       "word": "50%",
-      "startMs": 59489,
-      "endMs": 60000
+      "start": 54.717,
+      "end": 55.228,
+      "confidence": 1.0
     },
     {
       "word": "even",
-      "startMs": 60116,
-      "endMs": 60291
+      "start": 55.344,
+      "end": 55.519,
+      "confidence": 1.0
     },
     {
       "word": "though",
-      "startMs": 60314,
-      "endMs": 60476
+      "start": 55.542,
+      "end": 55.704,
+      "confidence": 1.0
     },
     {
       "word": "she",
-      "startMs": 60510,
-      "endMs": 60580
+      "start": 55.739,
+      "end": 55.809,
+      "confidence": 1.0
     },
     {
       "word": "got",
-      "startMs": 60638,
-      "endMs": 60766
+      "start": 55.867,
+      "end": 55.995,
+      "confidence": 1.0
     },
     {
       "word": "most",
-      "startMs": 60812,
-      "endMs": 60987
+      "start": 56.041,
+      "end": 56.215,
+      "confidence": 1.0
     },
     {
       "word": "of",
-      "startMs": 61022,
-      "endMs": 61068
+      "start": 56.25,
+      "end": 56.296,
+      "confidence": 1.0
     },
     {
       "word": "the",
-      "startMs": 61092,
-      "endMs": 61161
+      "start": 56.32,
+      "end": 56.389,
+      "confidence": 1.0
     },
     {
       "word": "answer",
-      "startMs": 61196,
-      "endMs": 61463
+      "start": 56.424,
+      "end": 56.691,
+      "confidence": 1.0
     },
     {
       "word": "right.",
-      "startMs": 61521,
-      "endMs": 61916
+      "start": 56.749,
+      "end": 57.144,
+      "confidence": 1.0
     },
     {
       "word": "She",
-      "startMs": 62229,
-      "endMs": 62357
+      "start": 57.457,
+      "end": 57.585,
+      "confidence": 1.0
     },
     {
       "word": "missed",
-      "startMs": 62415,
-      "endMs": 62635
+      "start": 57.643,
+      "end": 57.864,
+      "confidence": 1.0
     },
     {
       "word": "two",
-      "startMs": 62671,
-      "endMs": 62809
+      "start": 57.899,
+      "end": 58.038,
+      "confidence": 1.0
     },
     {
       "word": "out",
-      "startMs": 62879,
-      "endMs": 62995
+      "start": 58.108,
+      "end": 58.224,
+      "confidence": 1.0
     },
     {
       "word": "of",
-      "startMs": 63031,
-      "endMs": 63077
+      "start": 58.259,
+      "end": 58.305,
+      "confidence": 1.0
     },
     {
       "word": "25.",
-      "startMs": 63135,
-      "endMs": 63820
+      "start": 58.363,
+      "end": 59.048,
+      "confidence": 1.0
     },
     {
       "word": "So",
-      "startMs": 63936,
-      "endMs": 64064
+      "start": 59.164,
+      "end": 59.292,
+      "confidence": 1.0
     },
     {
       "word": "it",
-      "startMs": 64122,
-      "endMs": 64168
+      "start": 59.35,
+      "end": 59.396,
+      "confidence": 1.0
     },
     {
       "word": "should",
-      "startMs": 64191,
-      "endMs": 64331
+      "start": 59.419,
+      "end": 59.559,
+      "confidence": 1.0
     },
     {
       "word": "have",
-      "startMs": 64354,
-      "endMs": 64447
+      "start": 59.582,
+      "end": 59.675,
+      "confidence": 1.0
     },
     {
       "word": "been",
-      "startMs": 64470,
-      "endMs": 64598
+      "start": 59.698,
+      "end": 59.826,
+      "confidence": 1.0
     },
     {
       "word": "a",
-      "startMs": 64632,
-      "endMs": 64656
+      "start": 59.86,
+      "end": 59.884,
+      "confidence": 1.0
     },
     {
       "word": "92%.",
-      "startMs": 64737,
-      "endMs": 65654
+      "start": 59.965,
+      "end": 60.882,
+      "confidence": 1.0
     },
     {
       "word": "Like",
-      "startMs": 66084,
-      "endMs": 66281
+      "start": 61.312,
+      "end": 61.509,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 66327,
-      "endMs": 66444
+      "start": 61.555,
+      "end": 61.672,
+      "confidence": 1.0
     },
     {
       "word": "subscribe",
-      "startMs": 66467,
-      "endMs": 66838
+      "start": 61.695,
+      "end": 62.066,
+      "confidence": 1.0
     },
     {
       "word": "for",
-      "startMs": 66873,
-      "endMs": 66954
+      "start": 62.101,
+      "end": 62.182,
+      "confidence": 1.0
     },
     {
       "word": "Part",
-      "startMs": 67001,
-      "endMs": 67187
+      "start": 62.229,
+      "end": 62.415,
+      "confidence": 1.0
     },
     {
       "word": "2",
-      "startMs": 67221,
-      "endMs": 67396
+      "start": 62.449,
+      "end": 62.624,
+      "confidence": 1.0
     },
     {
       "word": "Like",
-      "startMs": 67512,
-      "endMs": 67663
+      "start": 62.74,
+      "end": 62.891,
+      "confidence": 1.0
     },
     {
       "word": "and",
-      "startMs": 67686,
-      "endMs": 67755
+      "start": 62.914,
+      "end": 62.983,
+      "confidence": 1.0
     },
     {
       "word": "subscribe",
-      "startMs": 67779,
-      "endMs": 68139
+      "start": 63.007,
+      "end": 63.367,
+      "confidence": 1.0
     },
     {
       "word": "for",
-      "startMs": 68162,
-      "endMs": 68255
+      "start": 63.39,
+      "end": 63.483,
+      "confidence": 1.0
     },
     {
       "word": "part",
-      "startMs": 68301,
-      "endMs": 68475
+      "start": 63.529,
+      "end": 63.703,
+      "confidence": 1.0
     },
     {
       "word": "2!",
-      "startMs": 68510,
-      "endMs": 69091
+      "start": 63.738,
+      "end": 64.319,
+      "confidence": 1.0
     }
   ]
 }

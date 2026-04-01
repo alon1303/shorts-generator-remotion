@@ -223,20 +223,10 @@ async def run_cached_export_pipeline(config: dict):
         title_duration_sec = title_words[-1]["end"] + 0.5 if title_words else 0.0
         title_duration_frames = math.floor(title_duration_sec * 30)
         
-        merged_words = []
-        for w in title_words:
-            merged_words.append({
-                "word": w["word"],
-                "startMs": int(w["start"] * 1000),
-                "endMs": int(w["end"] * 1000)
-            })
-            
-        for w in part_words:
-            merged_words.append({
-                "word": w["word"],
-                "startMs": int((w["start"] + title_duration_sec) * 1000),
-                "endMs": int((w["end"] + title_duration_sec) * 1000)
-            })
+        # We use the raw part_words JSON directly from ElevenLabs/TTS engine
+        # This ensures maximum precision and avoids manual formatting errors
+        # We explicitly skip title_words to avoid showing them as subtitles
+        merged_words = part_words
             
         # Total duration in frames
         total_duration_seconds = part_words[-1]["end"] + title_duration_sec if part_words else title_duration_sec
@@ -329,11 +319,16 @@ async def run_export_pipeline(url: str):
     FPS = 30
     words_data = []
     if word_timestamps:
+        # Filter out words that belong to the title using the original TTS format
         for ts in word_timestamps:
+            if ts.start < (title_dur - 0.1): # Skip title words
+                continue
+            
+            # Add as raw object
             words_data.append({
-                "word": ts.word,
-                "startMs": int(ts.start * 1000),
-                "endMs": int(ts.end * 1000)
+                "text": getattr(ts, 'word', getattr(ts, 'text', '')),
+                "start": ts.start,
+                "end": ts.end
             })
             
     total_duration_frames = math.floor(duration * FPS)

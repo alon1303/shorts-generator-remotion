@@ -17,7 +17,7 @@ export const MainComposition: React.FC<{ data: CompositionData }> = ({ data }) =
       <Audio src={staticFile(`current_render/${data.assets.audio}`)} />
       {data.assets.bg_music && (
         <Audio
-          src={staticFile(`current_render/${data.assets.bg_music}`)}
+          src={staticFile(`assets/audio/${data.assets.bg_music}`)}
           volume={0.15}
           loop
         />

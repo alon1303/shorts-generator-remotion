@@ -1,63 +1,45 @@
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, Sequence } from "remotion";
+import { AbsoluteFill, useVideoConfig, Sequence, spring, useCurrentFrame, interpolate } from "remotion";
 import React from "react";
 import { WordTiming } from "./types";
-import { createTikTokStyleCaptions } from "@remotion/captions";
 
 export const Subtitles: React.FC<{ words: WordTiming[]; titleDurationFrames: number }> = ({
   words,
   titleDurationFrames,
 }) => {
-  const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // FIX THE OVERLAP BUG: Hide everything if Title Card is still active
-  if (frame < titleDurationFrames) {
+  // 1. Safety check for words array
+  if (!words || words.length === 0) {
     return null;
   }
 
-  // 1. Map our WordTiming to Remotion's Caption format (Direct Millisecond Mapping)
-  const captions: any[] = words.map((w) => ({
-    text: w.word + " ", // Trailing space is required by remotion
-    startMs: w.startMs,
-    endMs: w.endMs,
-    timestampMs: w.startMs,
-    confidence: 1
-  }));
-
-  // 2. Create TikTok style pages
-  const { pages } = createTikTokStyleCaptions({
-    captions,
-    combineTokensWithinMilliseconds: 1200,
-  });
-
   return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
-      {pages.map((page: any, index: number) => {
-        // Calculate frames from precision milliseconds
-        const startFrame = Math.floor((page.startMs / 1000) * fps);
-        const lastToken = page.tokens[page.tokens.length - 1];
-        const endFrame = Math.floor((lastToken.endMs / 1000) * fps);
+    <AbsoluteFill
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {words.map((word, i) => {
+        if (!word || !word.word) return null;
 
-        // Filter out pages that ended before Title Card finished
-        if (endFrame <= titleDurationFrames) {
+        // Determine the offset based on the word's timing relative to the title card
+        const isSingleRun = word.start > (titleDurationFrames / fps);
+        const offsetFrames = isSingleRun ? 0 : titleDurationFrames;
+
+        const from = Math.floor(word.start * fps) + offsetFrames;
+        const duration = Math.floor((word.end - word.start) * fps);
+
+        // Filter out words that occur DURING the TitleCard
+        if (from < titleDurationFrames) {
           return null;
         }
 
-        // Clip start frame to Title Card end
-        const actualStartFrame = Math.max(startFrame, titleDurationFrames);
-        const durationInFrames = endFrame - actualStartFrame;
-
-        if (durationInFrames <= 0) {
-          return null;
-        }
+        if (duration <= 0) return null;
 
         return (
-          <Sequence
-            key={index}
-            from={actualStartFrame}
-            durationInFrames={durationInFrames}
-          >
-            <CaptionPage page={page} />
+          <Sequence key={i} from={from} durationInFrames={duration}>
+            <SubtitleWord text={word.word} />
           </Sequence>
         );
       })}
@@ -65,44 +47,57 @@ export const Subtitles: React.FC<{ words: WordTiming[]; titleDurationFrames: num
   );
 };
 
-const CaptionPage: React.FC<{ page: any }> = ({ page }) => {
+const SubtitleWord: React.FC<{ text: string }> = ({ text }) => {
+  // We MUST call hooks at the top level of the component
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const currentMs = (frame / fps) * 1000;
+
+  // Modern "Pop" animation
+  const scale = spring({
+    frame,
+    fps,
+    config: {
+      damping: 12,
+      stiffness: 200,
+      mass: 0.5,
+    },
+  });
+
+  const rotation = interpolate(scale, [0, 1], [-3, 0]);
 
   return (
-    <div
-      style={{
-        color: "white",
-        fontSize: 80,
-        fontFamily: "Arial, sans-serif",
-        fontWeight: "bold",
-        textShadow: "0px 5px 10px rgba(0,0,0,0.8), 0px 0px 10px rgba(0,0,0,0.5)",
-        WebkitTextStroke: "2px black",
-        textAlign: "center",
-        width: "80%",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-      }}
+    <AbsoluteFill
+        style={{
+            justifyContent: "center",
+            alignItems: "center",
+        }}
     >
-      {page.tokens.map((token: any, i: number) => {
-        const isActive = currentMs >= token.startMs && currentMs <= token.endMs;
-        return (
-          <span
-            key={i}
-            style={{
-              color: isActive ? "yellow" : "white",
-              transform: isActive ? "scale(1.1)" : "scale(1.0)",
-              display: "inline-block",
-              margin: "0 10px",
-              transition: "transform 0.1s ease",
-            }}
-          >
-            {token.text}
-          </span>
-        );
-      })}
-    </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          paddingBottom: "200px", // Push word up from the bottom
+        }}
+      >
+        <span
+          style={{
+            color: "#FFFF00", // Bright Yellow
+            fontSize: 160,
+            fontFamily: "Arial Black, sans-serif",
+            fontWeight: "900",
+            textShadow: "0px 10px 30px rgba(0,0,0,1), 0px 0px 20px rgba(0,0,0,0.8)",
+            WebkitTextStroke: "6px black",
+            transform: `scale(${scale}) rotate(${rotation}deg)`,
+            textAlign: "center",
+            display: "inline-block",
+            lineHeight: "1",
+          }}
+        >
+          {text.toUpperCase()}
+        </span>
+      </div>
+    </AbsoluteFill>
   );
 };
